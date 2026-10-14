@@ -310,12 +310,12 @@
     <message>
       <location filename="../src/docks/FileListDock.ui" line="51"/>
       <source>...</source>
-      <translation type="unfinished">...</translation>
+      <translation>...</translation>
     </message>
     <message>
       <location filename="../src/docks/FileListDock.ui" line="90"/>
       <source>Sort by File Name</source>
-      <translation type="unfinished">Sort by File Name</translation>
+      <translation>Sortuj według nazwy pliku</translation>
     </message>
   </context>
   <context>
@@ -441,11 +441,10 @@
       <location filename="../src/dialogs/FindReplaceDialog.cpp" line="144"/>
       <location filename="../src/dialogs/FindReplaceDialog.cpp" line="341"/>
       <source>Replaced %Ln matches</source>
-      <translation type="unfinished">
+      <translation>
         <numerusform>Zamieniono %Ln wystąpienie</numerusform>
         <numerusform>Zamieniono %Ln wystąpienia</numerusform>
         <numerusform>Zamieniono %Ln wystąpień</numerusform>
-        <numerusform>Replaced %Ln matches</numerusform>
       </translation>
     </message>
     <message>
@@ -471,11 +470,10 @@
     <message numerus="yes">
       <location filename="../src/dialogs/FindReplaceDialog.cpp" line="352"/>
       <source>Found %Ln matches</source>
-      <translation type="unfinished">
+      <translation>
         <numerusform>Znaleziono %Ln wystąpienie</numerusform>
         <numerusform>Znaleziono %Ln wystąpienia</numerusform>
         <numerusform>Znaleziono %Ln wystąpień</numerusform>
-        <numerusform>Found %Ln matches</numerusform>
       </translation>
     </message>
   </context>
@@ -810,12 +808,12 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="211"/>
       <source>Mark All Occurrences</source>
-      <translation type="unfinished">Mark All Occurrences</translation>
+      <translation>Oznacz wszystkie wystąpienia</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="219"/>
       <source>Clear Marks</source>
-      <translation type="unfinished">Clear Marks</translation>
+      <translation>Wyczyść oznaczenia</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="242"/>
@@ -840,7 +838,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="280"/>
       <source>Unfold Level</source>
-      <translation type="unfinished">Unfold Level</translation>
+      <translation>Poziom rozwinięcia</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="306"/>
@@ -1507,7 +1505,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1168"/>
       <source>Open %1 Here</source>
-      <translation type="unfinished">Open %1 Here</translation>
+      <translation>Otwórz tutaj %1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1173"/>
@@ -1552,299 +1550,299 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1207"/>
       <source>Next Tab</source>
-      <translation type="unfinished">Next Tab</translation>
+      <translation>Następna karta</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1210"/>
       <source>Ctrl+Tab</source>
-      <translation type="unfinished">Ctrl+Tab</translation>
+      <translation>Ctrl+Tab</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1218"/>
       <source>Previous Tab</source>
-      <translation type="unfinished">Previous Tab</translation>
+      <translation>Poprzednia karta</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1221"/>
       <source>Ctrl+Shift+Tab</source>
-      <translation type="unfinished">Ctrl+Shift+Tab</translation>
+      <translation>Ctrl+Shift+Tab</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1229"/>
       <source>Fold Level 1</source>
-      <translation type="unfinished">Fold Level 1</translation>
+      <translation>Zwiń poziom 1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1232"/>
       <source>Alt+1</source>
-      <translation type="unfinished">Alt+1</translation>
+      <translation>Alt+1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1237"/>
       <source>Fold Level 2</source>
-      <translation type="unfinished">Fold Level 2</translation>
+      <translation>Zwiń poziom 2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1240"/>
       <source>Alt+2</source>
-      <translation type="unfinished">Alt+2</translation>
+      <translation>Alt+2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1245"/>
       <source>Fold Level 3</source>
-      <translation type="unfinished">Fold Level 3</translation>
+      <translation>Zwiń poziom 3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1248"/>
       <source>Alt+3</source>
-      <translation type="unfinished">Alt+3</translation>
+      <translation>Alt+3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1253"/>
       <source>Fold Level 4</source>
-      <translation type="unfinished">Fold Level 4</translation>
+      <translation>Zwiń poziom 4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1256"/>
       <source>Alt+4</source>
-      <translation type="unfinished">Alt+4</translation>
+      <translation>Alt+4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1261"/>
       <source>Unfold Level 1</source>
-      <translation type="unfinished">Unfold Level 1</translation>
+      <translation>Rozwiń poziom 1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1264"/>
       <source>Alt+Shift+1</source>
-      <translation type="unfinished">Alt+Shift+1</translation>
+      <translation>Alt+Shift+1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1269"/>
       <source>Unfold Level 2</source>
-      <translation type="unfinished">Unfold Level 2</translation>
+      <translation>Rozwiń poziom 2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1272"/>
       <source>Alt+Shift+2</source>
-      <translation type="unfinished">Alt+Shift+2</translation>
+      <translation>Alt+Shift+2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1277"/>
       <source>Unfold Level 3</source>
-      <translation type="unfinished">Unfold Level 3</translation>
+      <translation>Rozwiń poziom 3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1280"/>
       <source>Alt+Shift+3</source>
-      <translation type="unfinished">Alt+Shift+3</translation>
+      <translation>Alt+Shift+3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1285"/>
       <source>Unfold Level 4</source>
-      <translation type="unfinished">Unfold Level 4</translation>
+      <translation>Rozwiń poziom 4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1288"/>
       <source>Alt+Shift+4</source>
-      <translation type="unfinished">Alt+Shift+4</translation>
+      <translation>Alt+Shift+4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1293"/>
       <source>Fold All</source>
-      <translation type="unfinished">Fold All</translation>
+      <translation>Zwiń wszystko</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1296"/>
       <source>Alt+0</source>
-      <translation type="unfinished">Alt+0</translation>
+      <translation>Alt+0</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1301"/>
       <source>Unfold All</source>
-      <translation type="unfinished">Unfold All</translation>
+      <translation>Rozwiń wszystko</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1304"/>
       <source>Alt+Shift+0</source>
-      <translation type="unfinished">Alt+Shift+0</translation>
+      <translation>Alt+Shift+0</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1309"/>
       <source>Fold Level 5</source>
-      <translation type="unfinished">Fold Level 5</translation>
+      <translation>Zwiń poziom 5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1312"/>
       <source>Alt+5</source>
-      <translation type="unfinished">Alt+5</translation>
+      <translation>Alt+5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1317"/>
       <source>Fold Level 6</source>
-      <translation type="unfinished">Fold Level 6</translation>
+      <translation>Zwiń poziom 6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1320"/>
       <source>Alt+6</source>
-      <translation type="unfinished">Alt+6</translation>
+      <translation>Alt+6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1325"/>
       <source>Fold Level 7</source>
-      <translation type="unfinished">Fold Level 7</translation>
+      <translation>Zwiń poziom 7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1328"/>
       <source>Alt+7</source>
-      <translation type="unfinished">Alt+7</translation>
+      <translation>Alt+7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1333"/>
       <source>Fold Level 8</source>
-      <translation type="unfinished">Fold Level 8</translation>
+      <translation>Zwiń poziom 8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1336"/>
       <source>Alt+8</source>
-      <translation type="unfinished">Alt+8</translation>
+      <translation>Alt+8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1341"/>
       <source>Fold Level 9</source>
-      <translation type="unfinished">Fold Level 9</translation>
+      <translation>Zwiń poziom 9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1344"/>
       <source>Alt+9</source>
-      <translation type="unfinished">Alt+9</translation>
+      <translation>Alt+9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1349"/>
       <source>Unfold Level 5</source>
-      <translation type="unfinished">Unfold Level 5</translation>
+      <translation>Rozwiń poziom 5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1352"/>
       <source>Alt+Shift+5</source>
-      <translation type="unfinished">Alt+Shift+5</translation>
+      <translation>Alt+Shift+5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1357"/>
       <source>Unfold Level 6</source>
-      <translation type="unfinished">Unfold Level 6</translation>
+      <translation>Rozwiń poziom 6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1360"/>
       <source>Alt+Shift+6</source>
-      <translation type="unfinished">Alt+Shift+6</translation>
+      <translation>Alt+Shift+6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1365"/>
       <source>Unfold Level 7</source>
-      <translation type="unfinished">Unfold Level 7</translation>
+      <translation>Rozwiń poziom 7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1368"/>
       <source>Alt+Shift+7</source>
-      <translation type="unfinished">Alt+Shift+7</translation>
+      <translation>Alt+Shift+7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1373"/>
       <source>Unfold Level 8</source>
-      <translation type="unfinished">Unfold Level 8</translation>
+      <translation>Rozwiń poziom 8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1376"/>
       <source>Alt+Shift+8</source>
-      <translation type="unfinished">Alt+Shift+8</translation>
+      <translation>Alt+Shift+8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1381"/>
       <source>Unfold Level 9</source>
-      <translation type="unfinished">Unfold Level 9</translation>
+      <translation>Rozwiń poziom 9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1384"/>
       <source>Alt+Shift+9</source>
-      <translation type="unfinished">Alt+Shift+9</translation>
+      <translation>Alt+Shift+9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1389"/>
       <location filename="../src/dialogs/MainWindow.ui" line="1392"/>
       <source>Toggle Overtype</source>
-      <translation type="unfinished">Toggle Overtype</translation>
+      <translation>Przełącz tryb nadpisywania</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1395"/>
       <source>Ins</source>
-      <translation type="unfinished">Ins</translation>
+      <translation>Ins</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1403"/>
       <source>Debug Info...</source>
-      <translation type="unfinished">Debug Info...</translation>
+      <translation>Informacje diagnostyczne...</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1408"/>
       <source>Cut Bookmarked Lines</source>
-      <translation type="unfinished">Cut Bookmarked Lines</translation>
+      <translation>Wytnij wiersze z zakładkami</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1413"/>
       <source>Copy Bookmarked Lines</source>
-      <translation type="unfinished">Copy Bookmarked Lines</translation>
+      <translation>Kopiuj wiersze z zakładkami</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1418"/>
       <source>Delete Bookmarked Lines</source>
-      <translation type="unfinished">Delete Bookmarked Lines</translation>
+      <translation>Usuń wiersze z zakładkami</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1423"/>
       <source>Mark Style 1</source>
-      <translation type="unfinished">Mark Style 1</translation>
+      <translation>Styl oznaczenia 1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1431"/>
       <source>Mark Style 2</source>
-      <translation type="unfinished">Mark Style 2</translation>
+      <translation>Styl oznaczenia 2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1439"/>
       <source>Clear Style 1</source>
-      <translation type="unfinished">Clear Style 1</translation>
+      <translation>Wyczyść styl 1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1447"/>
       <source>Clear Style 2</source>
-      <translation type="unfinished">Clear Style 2</translation>
+      <translation>Wyczyść styl 2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1455"/>
       <source>Mark Style 3</source>
-      <translation type="unfinished">Mark Style 3</translation>
+      <translation>Styl oznaczenia 3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1463"/>
       <source>Clear Style 3</source>
-      <translation type="unfinished">Clear Style 3</translation>
+      <translation>Wyczyść styl 3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1471"/>
       <location filename="../src/dialogs/MainWindow.ui" line="1474"/>
       <source>Clear All Styles</source>
-      <translation type="unfinished">Clear All Styles</translation>
+      <translation>Wyczyść wszystkie style</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1479"/>
       <source>Remove Duplicate Lines</source>
-      <translation type="unfinished">Remove Duplicate Lines</translation>
+      <translation>Usuń zduplikowane wiersze</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1484"/>
       <source>Remove Consecutive Duplicate Lines</source>
-      <translation type="unfinished">Remove Consecutive Duplicate Lines</translation>
+      <translation>Usuń kolejne zduplikowane wiersze</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="375"/>
@@ -1864,7 +1862,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="813"/>
       <source>Debug Info</source>
-      <translation type="unfinished">Debug Info</translation>
+      <translation>Informacje diagnostyczne</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1016"/>
@@ -1953,82 +1951,82 @@
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1854"/>
       <source>&lt;b&gt;%1&lt;/b&gt; has been modified by another program. Do you want to reload it?</source>
-      <translation type="unfinished">&lt;b&gt;%1&lt;/b&gt; has been modified by another program. Do you want to reload it?</translation>
+      <translation>Plik &lt;b&gt;%1&lt;/b&gt; został zmodyfikowany przez inny program. Czy wczytać go ponownie?</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1880"/>
       <source>Read error</source>
-      <translation type="unfinished">Read error</translation>
+      <translation>Błąd odczytu</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1881"/>
       <source>Write error</source>
-      <translation type="unfinished">Write error</translation>
+      <translation>Błąd zapisu</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1882"/>
       <source>Fatal error</source>
-      <translation type="unfinished">Fatal error</translation>
+      <translation>Błąd krytyczny</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1883"/>
       <source>Resource error</source>
-      <translation type="unfinished">Resource error</translation>
+      <translation>Błąd zasobów</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1884"/>
       <source>Open error</source>
-      <translation type="unfinished">Open error</translation>
+      <translation>Błąd otwierania</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1885"/>
       <source>Abort error</source>
-      <translation type="unfinished">Abort error</translation>
+      <translation>Przerwano</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1886"/>
       <source>Timeout error</source>
-      <translation type="unfinished">Timeout error</translation>
+      <translation>Przekroczono limit czasu</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1887"/>
       <source>Unspecified error</source>
-      <translation type="unfinished">Unspecified error</translation>
+      <translation>Nieokreślony błąd</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1888"/>
       <source>Remove error</source>
-      <translation type="unfinished">Remove error</translation>
+      <translation>Błąd usuwania</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1889"/>
       <source>Rename error</source>
-      <translation type="unfinished">Rename error</translation>
+      <translation>Błąd zmiany nazwy</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1890"/>
       <source>Position error</source>
-      <translation type="unfinished">Position error</translation>
+      <translation>Błąd pozycji</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1891"/>
       <source>Resize error</source>
-      <translation type="unfinished">Resize error</translation>
+      <translation>Błąd zmiany rozmiaru</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1892"/>
       <source>Permissions error</source>
-      <translation type="unfinished">Permissions error</translation>
+      <translation>Błąd uprawnień</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1893"/>
       <source>Copy error</source>
-      <translation type="unfinished">Copy error</translation>
+      <translation>Błąd kopiowania</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1894"/>
       <source>Unknown error (%1)</source>
-      <translation type="unfinished">Unknown error (%1)</translation>
+      <translation>Nieznany błąd (%1)</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1897"/>
@@ -2049,6 +2047,936 @@
       <location filename="../src/dialogs/MainWindow.cpp" line="2071"/>
       <source>No updates are available at this time.</source>
       <translation>Brak dostępnych aktualizacji.</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="914"/>
+      <source>Shift+F3</source>
+      <translation>Shift+F3</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1501"/>
+      <source>Sort Lines Ascending</source>
+      <translation>Sortuj wiersze rosnąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1506"/>
+      <source>Sort Lines Descending</source>
+      <translation>Sortuj wiersze malejąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1511"/>
+      <source>Sort Lines Ascending (Case-Insensitive)</source>
+      <translation>Sortuj wiersze rosnąco (bez rozróżniania wielkości liter)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1516"/>
+      <source>Sort Lines Descending (Case-Insensitive)</source>
+      <translation>Sortuj wiersze malejąco (bez rozróżniania wielkości liter)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1521"/>
+      <source>Sort Lines by Length Ascending</source>
+      <translation>Sortuj wiersze według długości rosnąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1526"/>
+      <source>Sort Lines by Length Descending</source>
+      <translation>Sortuj wiersze według długości malejąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindow.ui" line="1531"/>
+      <source>Reverse Line Order</source>
+      <translation>Odwróć kolejność wierszy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="240"/>
+      <source>Show in Finder</source>
+      <translation>Pokaż w Finderze</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="241"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="244"/>
+      <source>Open Terminal Here</source>
+      <translation>Otwórz terminal tutaj</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="243"/>
+      <source>Show in File Manager</source>
+      <translation>Pokaż w menedżerze plików</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="279"/>
+      <source>Open Containing Folder</source>
+      <translation>Otwórz folder zawierający</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="283"/>
+      <source>Open in Default Viewer</source>
+      <translation>Otwórz w domyślnej przeglądarce</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="294"/>
+      <source>Close All Unchanged</source>
+      <translation>Zamknij wszystkie niezmienione</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="309"/>
+      <source>Load Session...</source>
+      <translation>Wczytaj sesję...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="310"/>
+      <source>Save Session...</source>
+      <translation>Zapisz sesję...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="313"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="315"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="508"/>
+      <source>Load Session</source>
+      <translation>Wczytaj sesję</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="313"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="320"/>
+      <source>Session files (*.xml *.session);;All files (*)</source>
+      <translation>Pliki sesji (*.xml *.session);;Wszystkie pliki (*)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="315"/>
+      <source>&lt;b&gt;%1&lt;/b&gt; is not a valid session file.</source>
+      <translation>&lt;b&gt;%1&lt;/b&gt; nie jest prawidłowym plikiem sesji.</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="320"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="328"/>
+      <source>Save Session</source>
+      <translation>Zapisz sesję</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="328"/>
+      <source>Unable to save the session to &lt;b&gt;%1&lt;/b&gt;.</source>
+      <translation>Nie można zapisać sesji do &lt;b&gt;%1&lt;/b&gt;.</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="335"/>
+      <source>Print Now</source>
+      <translation>Drukuj teraz</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="508"/>
+      <source>The following files no longer exist:
+%1</source>
+      <translation>Następujące pliki już nie istnieją:
+%1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="521"/>
+      <source>Multi-select All Occurrences</source>
+      <translation>Zaznacz wszystkie wystąpienia (wielokrotne zaznaczenie)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="529"/>
+      <source>Begin/End Select</source>
+      <translation>Początek/koniec zaznaczenia</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="548"/>
+      <source>Insert</source>
+      <translation>Wstaw</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="549"/>
+      <source>Date Time (short)</source>
+      <translation>Data i godzina (krótka)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="550"/>
+      <source>Date Time (long)</source>
+      <translation>Data i godzina (długa)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="551"/>
+      <source>Date Time (customized)</source>
+      <translation>Data i godzina (własny format)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="552"/>
+      <source>Customize Date Time Format...</source>
+      <translation>Własny format daty i godziny...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="559"/>
+      <source>Customize Date Time Format</source>
+      <translation>Własny format daty i godziny</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="560"/>
+      <source>Format (e.g. yyyy-MM-dd HH:mm:ss, dddd d MMMM yyyy):</source>
+      <translation>Format (np. yyyy-MM-dd HH:mm:ss, dddd d MMMM yyyy):</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="572"/>
+      <source>Copy All File Names</source>
+      <translation>Kopiuj nazwy wszystkich plików</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="573"/>
+      <source>Copy All File Paths</source>
+      <translation>Kopiuj ścieżki wszystkich plików</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="588"/>
+      <source>&amp;UPPERCASE</source>
+      <translation>&amp;WIELKIE LITERY</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="589"/>
+      <source>&amp;lowercase</source>
+      <translation>&amp;małe litery</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="601"/>
+      <source>&amp;Proper Case</source>
+      <translation>&amp;Jak W Tytule</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="602"/>
+      <source>Proper Case (blend)</source>
+      <translation>Jak W Tytule (z zachowaniem)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="603"/>
+      <source>&amp;Sentence case</source>
+      <translation>Jak w &amp;zdaniu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="604"/>
+      <source>Sentence case (blend)</source>
+      <translation>Jak w zdaniu (z zachowaniem)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="605"/>
+      <source>&amp;iNVERT cASE</source>
+      <translation>&amp;oDWRÓĆ wIELKOŚĆ</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="606"/>
+      <source>&amp;ranDOm CasE</source>
+      <translation>&amp;LoSoWa WiElKoŚć</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="617"/>
+      <source>Remove Empty Lines (Containing Blank characters)</source>
+      <translation>Usuń puste wiersze (zawierające białe znaki)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="621"/>
+      <source>Insert Blank Line Above Current</source>
+      <translation>Wstaw pusty wiersz nad bieżącym</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="622"/>
+      <source>Insert Blank Line Below Current</source>
+      <translation>Wstaw pusty wiersz pod bieżącym</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="627"/>
+      <source>Randomize Line Order</source>
+      <translation>Losowa kolejność wierszy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="644"/>
+      <source>Sort Lines In Locale Order Ascending</source>
+      <translation>Sortuj wiersze rosnąco według ustawień regionalnych</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="646"/>
+      <source>Sort Lines As Integers Ascending</source>
+      <translation>Sortuj wiersze rosnąco jako liczby całkowite</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="648"/>
+      <source>Sort Lines As Decimals (Comma) Ascending</source>
+      <translation>Sortuj wiersze rosnąco jako liczby dziesiętne (przecinek)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="650"/>
+      <source>Sort Lines As Decimals (Dot) Ascending</source>
+      <translation>Sortuj wiersze rosnąco jako liczby dziesiętne (kropka)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="653"/>
+      <source>Sort Lines In Locale Order Descending</source>
+      <translation>Sortuj wiersze malejąco według ustawień regionalnych</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="655"/>
+      <source>Sort Lines As Integers Descending</source>
+      <translation>Sortuj wiersze malejąco jako liczby całkowite</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="657"/>
+      <source>Sort Lines As Decimals (Comma) Descending</source>
+      <translation>Sortuj wiersze malejąco jako liczby dziesiętne (przecinek)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="659"/>
+      <source>Sort Lines As Decimals (Dot) Descending</source>
+      <translation>Sortuj wiersze malejąco jako liczby dziesiętne (kropka)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="663"/>
+      <source>Block Comment</source>
+      <translation>Komentarz blokowy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="664"/>
+      <source>Block Uncomment</source>
+      <translation>Usuń komentarz blokowy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="667"/>
+      <source>Block comments are not supported for %1</source>
+      <translation>Komentarze blokowe nie są obsługiwane dla %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="675"/>
+      <source>Auto-Completion</source>
+      <translation>Autouzupełnianie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="683"/>
+      <source>Function Completion</source>
+      <translation>Uzupełnianie funkcji</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="684"/>
+      <source>Word Completion</source>
+      <translation>Uzupełnianie słów</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="685"/>
+      <source>Path Completion</source>
+      <translation>Uzupełnianie ścieżek</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="719"/>
+      <source>Blank Operations</source>
+      <translation>Operacje na białych znakach</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="726"/>
+      <source>Trim Trailing Space</source>
+      <translation>Usuń końcowe spacje</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="727"/>
+      <source>Trim Leading Space</source>
+      <translation>Usuń początkowe spacje</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="728"/>
+      <source>Trim Leading and Trailing Space</source>
+      <translation>Usuń początkowe i końcowe spacje</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="729"/>
+      <source>EOL to Space</source>
+      <translation>Końce wierszy na spacje</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="730"/>
+      <source>Remove Unnecessary Blank and EOL</source>
+      <translation>Usuń zbędne białe znaki i końce wierszy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="732"/>
+      <source>TAB to Space</source>
+      <translation>Tabulatory na spacje</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="733"/>
+      <source>Space to TAB (All)</source>
+      <translation>Spacje na tabulatory (wszystkie)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="734"/>
+      <source>Space to TAB (Leading)</source>
+      <translation>Spacje na tabulatory (początkowe)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="750"/>
+      <source>On Selection</source>
+      <translation>Na zaznaczeniu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="751"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="858"/>
+      <source>Open File</source>
+      <translation>Otwórz plik</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="752"/>
+      <source>Search on Internet</source>
+      <translation>Szukaj w internecie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="753"/>
+      <source>Change Search Engine...</source>
+      <translation>Zmień wyszukiwarkę...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="774"/>
+      <source>Search Engine</source>
+      <translation>Wyszukiwarka</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="774"/>
+      <source>URL ($(CURRENT_WORD) is replaced by the selection):</source>
+      <translation>URL ($(CURRENT_WORD) zostanie zastąpione zaznaczeniem):</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="785"/>
+      <source>Column Editor...</source>
+      <translation>Edytor kolumn...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="788"/>
+      <source>Read-Only</source>
+      <translation>Tylko do odczytu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="796"/>
+      <source>Clear Read-Only Flag</source>
+      <translation>Usuń atrybut „tylko do odczytu”</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="858"/>
+      <source>&lt;b&gt;%1&lt;/b&gt; does not exist.</source>
+      <translation>&lt;b&gt;%1&lt;/b&gt; nie istnieje.</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="947"/>
+      <source>Select and Find Next</source>
+      <translation>Zaznacz i znajdź następne</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="948"/>
+      <source>Select and Find Previous</source>
+      <translation>Zaznacz i znajdź poprzednie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="949"/>
+      <source>Find (Volatile) Next</source>
+      <translation>Znajdź (tymczasowo) następne</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="950"/>
+      <source>Find (Volatile) Previous</source>
+      <translation>Znajdź (tymczasowo) poprzednie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="958"/>
+      <source>Go to Matching Brace</source>
+      <translation>Przejdź do pasującego nawiasu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="959"/>
+      <source>Select All In-between {} [] or ()</source>
+      <translation>Zaznacz zawartość między {} [] lub ()</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="960"/>
+      <source>Mark...</source>
+      <translation>Oznacz...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="989"/>
+      <source>Mark Style %1</source>
+      <translation>Styl oznaczenia %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="990"/>
+      <source>Clear Style %1</source>
+      <translation>Wyczyść styl %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1014"/>
+      <source>Jump Up</source>
+      <translation>Skocz w górę</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1015"/>
+      <source>Jump Down</source>
+      <translation>Skocz w dół</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1016"/>
+      <source>Copy Styled Text</source>
+      <translation>Kopiuj tekst ze stylem</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1041"/>
+      <source>1st Style</source>
+      <translation>1. styl</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1041"/>
+      <source>2nd Style</source>
+      <translation>2. styl</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1041"/>
+      <source>3rd Style</source>
+      <translation>3. styl</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1041"/>
+      <source>4th Style</source>
+      <translation>4. styl</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1041"/>
+      <source>5th Style</source>
+      <translation>5. styl</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1061"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1062"/>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1064"/>
+      <source>Find Mark Style</source>
+      <translation>Styl oznaczenia wyszukiwania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1063"/>
+      <source>All Styles</source>
+      <translation>Wszystkie style</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1084"/>
+      <source>Remove Non-Bookmarked Lines</source>
+      <translation>Usuń wiersze bez zakładek</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1085"/>
+      <source>Paste to (Replace) Bookmarked Lines</source>
+      <translation>Wklej do wierszy z zakładkami (zastąp)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1112"/>
+      <source>Find Characters in Range...</source>
+      <translation>Znajdź znaki z zakresu...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1207"/>
+      <source>Exit Distraction Free Mode</source>
+      <translation>Zakończ tryb bez rozpraszania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1289"/>
+      <source>Full file path: %1</source>
+      <translation>Pełna ścieżka pliku: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1290"/>
+      <source>Created: %1</source>
+      <translation>Utworzono: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1291"/>
+      <source>Modified: %1</source>
+      <translation>Zmodyfikowano: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1295"/>
+      <source>Characters (without line endings): %1</source>
+      <translation>Znaki (bez końców wierszy): %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1296"/>
+      <source>Words: %1</source>
+      <translation>Słowa: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1297"/>
+      <source>Lines: %1</source>
+      <translation>Wiersze: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1298"/>
+      <source>Document length: %1</source>
+      <translation>Długość dokumentu: %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1299"/>
+      <source>%1 selected characters (%2 bytes) in %3 ranges</source>
+      <translation>Zaznaczone znaki: %1 (%2 bajtów) w zakresach: %3</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1301"/>
+      <source>Summary</source>
+      <translation>Podsumowanie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1307"/>
+      <source>Always on Top</source>
+      <translation>Zawsze na wierzchu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1322"/>
+      <source>Post-It</source>
+      <translation>Post-It</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1326"/>
+      <source>Distraction Free Mode</source>
+      <translation>Tryb bez rozpraszania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1334"/>
+      <source>Move/Clone Current Document</source>
+      <translation>Przenieś/sklonuj bieżący dokument</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1335"/>
+      <source>Move to Other View</source>
+      <translation>Przenieś do drugiego widoku</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1339"/>
+      <source>Tab</source>
+      <translation>Karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>1st Tab</source>
+      <translation>1. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>2nd Tab</source>
+      <translation>2. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>3rd Tab</source>
+      <translation>3. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>4th Tab</source>
+      <translation>4. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>5th Tab</source>
+      <translation>5. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>6th Tab</source>
+      <translation>6. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>7th Tab</source>
+      <translation>7. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>8th Tab</source>
+      <translation>8. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1340"/>
+      <source>9th Tab</source>
+      <translation>9. karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1352"/>
+      <source>Last Tab</source>
+      <translation>Ostatnia karta</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1365"/>
+      <source>Move Tab Forward</source>
+      <translation>Przesuń kartę w prawo</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1366"/>
+      <source>Move Tab Backward</source>
+      <translation>Przesuń kartę w lewo</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1384"/>
+      <source>Focus on Another View</source>
+      <translation>Przełącz na drugi widok</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1393"/>
+      <source>Hide Lines</source>
+      <translation>Ukryj wiersze</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1399"/>
+      <source>Show All Hidden Lines</source>
+      <translation>Pokaż wszystkie ukryte wiersze</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1408"/>
+      <source>Fold Current Level</source>
+      <translation>Zwiń bieżący poziom</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1409"/>
+      <source>Unfold Current Level</source>
+      <translation>Rozwiń bieżący poziom</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1415"/>
+      <source>Summary...</source>
+      <translation>Podsumowanie...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1425"/>
+      <source>Synchronize Vertical Scrolling</source>
+      <translation>Synchronizuj przewijanie w pionie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1426"/>
+      <source>Synchronize Horizontal Scrolling</source>
+      <translation>Synchronizuj przewijanie w poziomie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1441"/>
+      <source>Monitoring (tail -f)</source>
+      <translation>Monitorowanie (tail -f)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1452"/>
+      <source>Monitoring</source>
+      <translation>Monitorowanie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1452"/>
+      <source>&lt;b&gt;%1&lt;/b&gt; has unsaved changes. Do you want to save it before monitoring it?</source>
+      <translation>&lt;b&gt;%1&lt;/b&gt; zawiera niezapisane zmiany. Czy zapisać plik przed rozpoczęciem monitorowania?</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1496"/>
+      <source>ANSI</source>
+      <translation>ANSI</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1497"/>
+      <source>UTF-8</source>
+      <translation>UTF-8</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1498"/>
+      <source>UTF-8-BOM</source>
+      <translation>UTF-8-BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1499"/>
+      <source>UTF-16 BE BOM</source>
+      <translation>UTF-16 BE BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1500"/>
+      <source>UTF-16 LE BOM</source>
+      <translation>UTF-16 LE BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1502"/>
+      <source>Character Sets</source>
+      <translation>Zestawy znaków</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1521"/>
+      <source>Convert to ANSI</source>
+      <translation>Konwertuj na ANSI</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1522"/>
+      <source>Convert to UTF-8</source>
+      <translation>Konwertuj na UTF-8</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1523"/>
+      <source>Convert to UTF-8-BOM</source>
+      <translation>Konwertuj na UTF-8-BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1524"/>
+      <source>Convert to UTF-16 BE BOM</source>
+      <translation>Konwertuj na UTF-16 BE BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1525"/>
+      <source>Convert to UTF-16 LE BOM</source>
+      <translation>Konwertuj na UTF-16 LE BOM</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1548"/>
+      <source>Convert Encoding</source>
+      <translation>Konwersja kodowania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1549"/>
+      <source>Some characters of this document can&apos;t be represented in &lt;b&gt;%1&lt;/b&gt; and will be replaced when saving.&lt;br&gt;&lt;br&gt;Do you want to continue?</source>
+      <translation>Niektórych znaków tego dokumentu nie da się zapisać w kodowaniu &lt;b&gt;%1&lt;/b&gt; i zostaną zastąpione podczas zapisu.&lt;br&gt;&lt;br&gt;Czy chcesz kontynuować?</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1562"/>
+      <source>Change Encoding</source>
+      <translation>Zmiana kodowania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1563"/>
+      <source>The document has unsaved changes. Reloading it as &lt;b&gt;%1&lt;/b&gt; will lose them.&lt;br&gt;&lt;br&gt;Do you want to continue?</source>
+      <translation>Dokument zawiera niezapisane zmiany. Ponowne wczytanie jako &lt;b&gt;%1&lt;/b&gt; spowoduje ich utratę.&lt;br&gt;&lt;br&gt;Czy chcesz kontynuować?</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1650"/>
+      <source>Shortcut Mapper...</source>
+      <translation>Mapowanie skrótów...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1666"/>
+      <source>&amp;Tools</source>
+      <translation>&amp;Narzędzia</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1680"/>
+      <source>Generate...</source>
+      <translation>Generuj...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1681"/>
+      <source>Generate from files...</source>
+      <translation>Generuj z plików...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1682"/>
+      <source>Generate from selection into clipboard</source>
+      <translation>Generuj z zaznaczenia do schowka</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1705"/>
+      <source>%1 copied to clipboard</source>
+      <translation>Skopiowano %1 do schowka</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1718"/>
+      <source>Trim Trailing Space and Save</source>
+      <translation>Usuń końcowe spacje i zapisz</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1750"/>
+      <source>&amp;Run</source>
+      <translation>&amp;Uruchom</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1753"/>
+      <source>Run...</source>
+      <translation>Uruchom...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1759"/>
+      <source>Launch in Default Browser</source>
+      <translation>Otwórz w domyślnej przeglądarce internetowej</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1767"/>
+      <source>Delete Saved Command...</source>
+      <translation>Usuń zapisane polecenie...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1776"/>
+      <source>Delete Saved Command</source>
+      <translation>Usuń zapisane polecenie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1776"/>
+      <source>Command:</source>
+      <translation>Polecenie:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1804"/>
+      <source>Run</source>
+      <translation>Uruchom</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1804"/>
+      <source>Unable to run &lt;b&gt;%1&lt;/b&gt;</source>
+      <translation>Nie można uruchomić &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1852"/>
+      <source>&amp;Window</source>
+      <translation>&amp;Okno</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1855"/>
+      <source>Windows...</source>
+      <translation>Okna...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1866"/>
+      <source>Sort By</source>
+      <translation>Sortuj według</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1868"/>
+      <source>Name A to Z</source>
+      <translation>Nazwa A-Z</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1868"/>
+      <source>Name Z to A</source>
+      <translation>Nazwa Z-A</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1869"/>
+      <source>Path A to Z</source>
+      <translation>Ścieżka A-Z</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1869"/>
+      <source>Path Z to A</source>
+      <translation>Ścieżka Z-A</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1870"/>
+      <source>Type A to Z</source>
+      <translation>Typ A-Z</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1870"/>
+      <source>Type Z to A</source>
+      <translation>Typ Z-A</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1871"/>
+      <source>Content Length Ascending</source>
+      <translation>Długość zawartości rosnąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1871"/>
+      <source>Content Length Descending</source>
+      <translation>Długość zawartości malejąco</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1918"/>
+      <source>Command Line Arguments...</source>
+      <translation>Argumenty wiersza poleceń...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MainWindowNpp.cpp" line="1929"/>
+      <source>Command Line Arguments</source>
+      <translation>Argumenty wiersza poleceń</translation>
     </message>
   </context>
   <context>
@@ -2091,7 +3019,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="89"/>
       <source>Recenter find/replace dialog when opened</source>
-      <translation type="unfinished">Recenter find/replace dialog when opened</translation>
+      <translation>Wyśrodkuj okno wyszukiwania/zamiany przy otwieraniu</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="96"/>
@@ -2106,63 +3034,63 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="123"/>
       <source>Exit on last tab closed</source>
-      <translation type="unfinished">Exit on last tab closed</translation>
+      <translation>Zakończ po zamknięciu ostatniej karty</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="132"/>
       <source>Default Font</source>
-      <translation type="unfinished">Default Font</translation>
+      <translation>Domyślna czcionka</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="138"/>
       <source>Font</source>
-      <translation type="unfinished">Font</translation>
+      <translation>Czcionka</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="148"/>
       <source>Font Size</source>
-      <translation type="unfinished">Font Size</translation>
+      <translation>Rozmiar czcionki</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="155"/>
       <source>pt</source>
-      <translation type="unfinished">pt</translation>
+      <translation>pt</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="188"/>
       <source>Default Line Endings</source>
-      <translation type="unfinished">Default Line Endings</translation>
+      <translation>Domyślne końce wierszy</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="200"/>
       <source>Highlight URLs</source>
-      <translation type="unfinished">Highlight URLs</translation>
+      <translation>Podświetlaj adresy URL</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="207"/>
       <source>Show Line Numbers</source>
-      <translation type="unfinished">Show Line Numbers</translation>
+      <translation>Pokaż numery wierszy</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="214"/>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="122"/>
       <source>Default Directory</source>
-      <translation type="unfinished">Default Directory</translation>
+      <translation>Domyślny katalog</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="220"/>
       <source>Follow Current Document</source>
-      <translation type="unfinished">Follow Current Document</translation>
+      <translation>Katalog bieżącego dokumentu</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="227"/>
       <source>Last Used Directory</source>
-      <translation type="unfinished">Last Used Directory</translation>
+      <translation>Ostatnio używany katalog</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="246"/>
       <source>...</source>
-      <translation type="unfinished">...</translation>
+      <translation>...</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="277"/>
@@ -2187,7 +3115,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="85"/>
       <source>System Default</source>
-      <translation type="unfinished">System Default</translation>
+      <translation>Domyślne systemowe</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="86"/>
@@ -2197,7 +3125,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="87"/>
       <source>Linux (LF)</source>
-      <translation type="unfinished">Linux (LF)</translation>
+      <translation>Linux (LF)</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="88"/>
@@ -2208,6 +3136,26 @@
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="185"/>
       <source>&lt;System Default&gt;</source>
       <translation>&lt;domyślny systemowy&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/PreferencesDialog.ui" line="121"/>
+      <source>Theme:</source>
+      <translation>Motyw:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/PreferencesDialog.cpp" line="65"/>
+      <source>System</source>
+      <translation>Systemowy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/PreferencesDialog.cpp" line="66"/>
+      <source>Light</source>
+      <translation>Jasny</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/PreferencesDialog.cpp" line="67"/>
+      <source>Dark</source>
+      <translation>Ciemny</translation>
     </message>
   </context>
   <context>
@@ -2260,7 +3208,7 @@
     <message>
       <location filename="../src/widgets/QuickFindWidget.cpp" line="238"/>
       <source>%L1/%L2</source>
-      <translation type="unfinished">%L1/%L2</translation>
+      <translation>%L1/%L2</translation>
     </message>
   </context>
   <context>
@@ -2273,7 +3221,7 @@
     <message>
       <location filename="../src/docks/SearchResultsDock.ui" line="38"/>
       <source>Copy Results to Clipboard</source>
-      <translation type="unfinished">Copy Results to Clipboard</translation>
+      <translation>Kopiuj wyniki do schowka</translation>
     </message>
     <message>
       <location filename="../src/docks/SearchResultsDock.cpp" line="57"/>
@@ -2294,6 +3242,776 @@
       <location filename="../src/docks/SearchResultsDock.cpp" line="62"/>
       <source>Delete All</source>
       <translation>Usuń wszystko</translation>
+    </message>
+  </context>
+  <context>
+    <name>CharacterPanelDock</name>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="50"/>
+      <source>ASCII Codes Insertion Panel</source>
+      <translation>Panel wstawiania kodów ASCII</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>Value</source>
+      <translation>Wartość</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>Hex</source>
+      <translation>Hex</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>Character</source>
+      <translation>Znak</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>HTML Name</source>
+      <translation>Nazwa HTML</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>HTML Decimal</source>
+      <translation>HTML dziesiętnie</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="54"/>
+      <source>HTML Hexadecimal</source>
+      <translation>HTML szesnastkowo</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/CharacterPanelDock.cpp" line="60"/>
+      <source>Double click to insert the value into the document</source>
+      <translation>Kliknij dwukrotnie, aby wstawić wartość do dokumentu</translation>
+    </message>
+  </context>
+  <context>
+    <name>ClipboardHistoryDock</name>
+    <message>
+      <location filename="../src/docks/ClipboardHistoryDock.cpp" line="20"/>
+      <source>Clipboard History</source>
+      <translation>Historia schowka</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/ClipboardHistoryDock.cpp" line="34"/>
+      <source>Paste</source>
+      <translation>Wklej</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/ClipboardHistoryDock.cpp" line="35"/>
+      <source>Copy to Clipboard</source>
+      <translation>Kopiuj do schowka</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/ClipboardHistoryDock.cpp" line="36"/>
+      <source>Delete Entry</source>
+      <translation>Usuń wpis</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/ClipboardHistoryDock.cpp" line="40"/>
+      <source>Clear History</source>
+      <translation>Wyczyść historię</translation>
+    </message>
+  </context>
+  <context>
+    <name>DocumentMapDock</name>
+    <message>
+      <location filename="../src/docks/DocumentMapDock.cpp" line="16"/>
+      <source>Document Map</source>
+      <translation>Mapa dokumentu</translation>
+    </message>
+  </context>
+  <context>
+    <name>FindCharactersInRangeDialog</name>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="45"/>
+      <source>Find Characters in Range</source>
+      <translation>Znajdź znaki z zakresu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="48"/>
+      <source>Non-ASCII characters (128-255)</source>
+      <translation>Znaki spoza ASCII (128-255)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="49"/>
+      <source>ASCII characters (0-127)</source>
+      <translation>Znaki ASCII (0-127)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="50"/>
+      <source>My range:</source>
+      <translation>Własny zakres:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="63"/>
+      <source>Range</source>
+      <translation>Zakres</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="72"/>
+      <source>Up</source>
+      <translation>W górę</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="73"/>
+      <source>Down</source>
+      <translation>W dół</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="75"/>
+      <source>Wrap around</source>
+      <translation>Zawijaj wyszukiwanie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="78"/>
+      <source>Direction</source>
+      <translation>Kierunek</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="83"/>
+      <source>Find</source>
+      <translation>Znajdź</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="84"/>
+      <source>Close</source>
+      <translation>Zamknij</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindCharactersInRangeDialog.cpp" line="187"/>
+      <source>&lt;font color=&quot;red&quot;&gt;Can&apos;t find any character in the range.&lt;/font&gt;</source>
+      <translation>&lt;font color=&quot;red&quot;&gt;Nie znaleziono żadnego znaku z tego zakresu.&lt;/font&gt;</translation>
+    </message>
+  </context>
+  <context>
+    <name>FindInFilesDialog</name>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="50"/>
+      <source>Find in Files</source>
+      <translation>Znajdź w plikach</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="67"/>
+      <source>Find what:</source>
+      <translation>Znajdź:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="68"/>
+      <source>Replace with:</source>
+      <translation>Zamień na:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="69"/>
+      <source>Filters:</source>
+      <translation>Filtry:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="70"/>
+      <source>Directory:</source>
+      <translation>Katalog:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="72"/>
+      <source>Follow current doc.</source>
+      <translation>Katalog bieżącego dokumentu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="73"/>
+      <source>In all sub-folders</source>
+      <translation>We wszystkich podfolderach</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="74"/>
+      <source>In hidden folders</source>
+      <translation>W ukrytych folderach</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="75"/>
+      <source>Match &amp;whole word only</source>
+      <translation>Tylko całe &amp;wyrazy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="76"/>
+      <source>Match &amp;case</source>
+      <translation>&amp;Uwzględniaj wielkość liter</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="78"/>
+      <source>&amp;Normal</source>
+      <translation>&amp;Normalny</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="79"/>
+      <source>E&amp;xtended (\n, \r, \t, \0, \x...)</source>
+      <translation>&amp;Rozszerzony (\n, \r, \t, \0, \x...)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="80"/>
+      <source>Re&amp;gular expression</source>
+      <translation>Wyrażenie re&amp;gularne</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="81"/>
+      <source>. matches newline</source>
+      <translation>. dopasowuje nowy wiersz</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="86"/>
+      <source>Search Mode</source>
+      <translation>Tryb wyszukiwania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="112"/>
+      <source>Find All</source>
+      <translation>Znajdź wszystko</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="113"/>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="543"/>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="627"/>
+      <source>Replace in Files</source>
+      <translation>Zamień w plikach</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="114"/>
+      <source>Close</source>
+      <translation>Zamknij</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="252"/>
+      <source>&lt;font color=&quot;red&quot;&gt;Find what is empty.&lt;/font&gt;</source>
+      <translation>&lt;font color=&quot;red&quot;&gt;Pole „Znajdź” jest puste.&lt;/font&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="283"/>
+      <source>&lt;font color=&quot;red&quot;&gt;Invalid regular expression: %1&lt;/font&gt;</source>
+      <translation>&lt;font color=&quot;red&quot;&gt;Nieprawidłowe wyrażenie regularne: %1&lt;/font&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="292"/>
+      <source>Select a folder to search from</source>
+      <translation>Wybierz folder do przeszukania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="318"/>
+      <source>&lt;font color=&quot;red&quot;&gt;The directory does not exist.&lt;/font&gt;</source>
+      <translation>&lt;font color=&quot;red&quot;&gt;Katalog nie istnieje.&lt;/font&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="418"/>
+      <source>Searching...</source>
+      <translation>Wyszukiwanie...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="418"/>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="560"/>
+      <source>Cancel</source>
+      <translation>Anuluj</translation>
+    </message>
+    <message numerus="yes">
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="499"/>
+      <source>&lt;font color=&quot;green&quot;&gt;%Ln hit(s) in %1 file(s) (%2 file(s) searched)&lt;/font&gt;</source>
+      <translation>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;%Ln trafienie w plikach: %1 (przeszukano plików: %2)&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;%Ln trafienia w plikach: %1 (przeszukano plików: %2)&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;%Ln trafień w plikach: %1 (przeszukano plików: %2)&lt;/font&gt;</numerusform>
+      </translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="540"/>
+      <source>Are you sure you want to replace all occurrences in all files matching &lt;b&gt;%1&lt;/b&gt; in:&lt;br&gt;&lt;b&gt;%2&lt;/b&gt;?</source>
+      <translation>Czy na pewno chcesz zamienić wszystkie wystąpienia we wszystkich plikach pasujących do &lt;b&gt;%1&lt;/b&gt; w:&lt;br&gt;&lt;b&gt;%2&lt;/b&gt;?</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="560"/>
+      <source>Replacing...</source>
+      <translation>Zamienianie...</translation>
+    </message>
+    <message numerus="yes">
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="624"/>
+      <source>&lt;font color=&quot;green&quot;&gt;Replace in Files: %Ln occurrence(s) were replaced in %1 file(s).&lt;/font&gt;</source>
+      <translation>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Zamień w plikach: zamieniono %Ln wystąpienie w plikach: %1.&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Zamień w plikach: zamieniono %Ln wystąpienia w plikach: %1.&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Zamień w plikach: zamieniono %Ln wystąpień w plikach: %1.&lt;/font&gt;</numerusform>
+      </translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/FindInFilesDialog.cpp" line="627"/>
+      <source>The following files could not be written:
+%1</source>
+      <translation>Nie udało się zapisać następujących plików:
+%1</translation>
+    </message>
+  </context>
+  <context>
+    <name>FunctionListDock</name>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="27"/>
+      <source>Function List</source>
+      <translation>Lista funkcji</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="33"/>
+      <source>Search</source>
+      <translation>Szukaj</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="39"/>
+      <source>Sort alphabetically</source>
+      <translation>Sortuj alfabetycznie</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="46"/>
+      <source>Reload</source>
+      <translation>Odśwież</translation>
+    </message>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="145"/>
+      <source>(Function list is not available for %1)</source>
+      <translation>(Lista funkcji nie jest dostępna dla %1)</translation>
+    </message>
+  </context>
+  <context>
+    <name>HashGeneratorDialog</name>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="35"/>
+      <source>Copy to Clipboard</source>
+      <translation>Kopiuj do schowka</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="36"/>
+      <source>Close</source>
+      <translation>Zamknij</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="41"/>
+      <source>Generate %1 digest</source>
+      <translation>Generuj skrót %1</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="45"/>
+      <source>Treat each line as a separate string</source>
+      <translation>Traktuj każdy wiersz jako osobny tekst</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="50"/>
+      <source>Text:</source>
+      <translation>Tekst:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="53"/>
+      <source>%1 digest:</source>
+      <translation>Skrót %1:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="59"/>
+      <source>Generate %1 digest from files</source>
+      <translation>Generuj skrót %1 z plików</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="61"/>
+      <source>Choose files to generate %1...</source>
+      <translation>Wybierz pliki, aby wygenerować %1...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/HashGeneratorDialog.cpp" line="130"/>
+      <source>Choose files to generate %1</source>
+      <translation>Wybierz pliki, aby wygenerować %1</translation>
+    </message>
+  </context>
+  <context>
+    <name>MarkDialog</name>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="25"/>
+      <source>Mark</source>
+      <translation>Oznacz</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="34"/>
+      <source>Bookmark line</source>
+      <translation>Dodaj zakładkę do wiersza</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="35"/>
+      <source>Purge for each search</source>
+      <translation>Wyczyść przed każdym wyszukiwaniem</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="37"/>
+      <source>Match &amp;whole word only</source>
+      <translation>Tylko całe &amp;wyrazy</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="38"/>
+      <source>Match &amp;case</source>
+      <translation>&amp;Uwzględniaj wielkość liter</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="39"/>
+      <source>In select&amp;ion</source>
+      <translation>W zaznacze&amp;niu</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="41"/>
+      <source>&amp;Normal</source>
+      <translation>&amp;Normalny</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="42"/>
+      <source>E&amp;xtended (\n, \r, \t, \0, \x...)</source>
+      <translation>&amp;Rozszerzony (\n, \r, \t, \0, \x...)</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="43"/>
+      <source>Re&amp;gular expression</source>
+      <translation>Wyrażenie re&amp;gularne</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="47"/>
+      <source>Search Mode</source>
+      <translation>Tryb wyszukiwania</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="53"/>
+      <source>Mark All</source>
+      <translation>Oznacz wszystko</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="54"/>
+      <source>Clear all marks</source>
+      <translation>Wyczyść wszystkie oznaczenia</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="55"/>
+      <source>Copy Marked Text</source>
+      <translation>Kopiuj oznaczony tekst</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="56"/>
+      <source>Close</source>
+      <translation>Zamknij</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="65"/>
+      <source>Find what:</source>
+      <translation>Znajdź:</translation>
+    </message>
+    <message numerus="yes">
+      <location filename="../src/dialogs/MarkDialog.cpp" line="205"/>
+      <source>&lt;font color=&quot;green&quot;&gt;Mark: %Ln match(es)&lt;/font&gt;</source>
+      <translation>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Oznacz: %Ln wynik&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Oznacz: %Ln wyniki&lt;/font&gt;</numerusform>
+        <numerusform>&lt;font color=&quot;green&quot;&gt;Oznacz: %Ln wyników&lt;/font&gt;</numerusform>
+      </translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="208"/>
+      <source>&lt;font color=&quot;red&quot;&gt;Mark: 0 matches&lt;/font&gt;</source>
+      <translation>&lt;font color=&quot;red&quot;&gt;Oznacz: brak wyników&lt;/font&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="215"/>
+      <source>All marks have been cleared</source>
+      <translation>Wszystkie oznaczenia zostały usunięte</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/MarkDialog.cpp" line="224"/>
+      <source>Marked text has been copied to the clipboard</source>
+      <translation>Oznaczony tekst skopiowano do schowka</translation>
+    </message>
+  </context>
+  <context>
+    <name>QObject</name>
+    <message>
+      <location filename="../src/docks/FunctionListDock.cpp" line="115"/>
+      <source>Line %1</source>
+      <translation>Wiersz %1</translation>
+    </message>
+  </context>
+  <context>
+    <name>RunDialog</name>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="29"/>
+      <source>Run...</source>
+      <translation>Uruchom...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="47"/>
+      <source>&lt;small&gt;Variables: $(FULL_CURRENT_PATH), $(CURRENT_DIRECTORY), $(FILE_NAME), $(NAME_PART), $(EXT_PART), $(CURRENT_WORD), $(CURRENT_LINE), $(CURRENT_LINESTR), $(CURRENT_COLUMN), $(NPP_DIRECTORY), $(NPP_FULL_FILE_PATH), $(SYS.&amp;lt;ENV_VAR&amp;gt;)&lt;/small&gt;</source>
+      <translation>&lt;small&gt;Zmienne: $(FULL_CURRENT_PATH), $(CURRENT_DIRECTORY), $(FILE_NAME), $(NAME_PART), $(EXT_PART), $(CURRENT_WORD), $(CURRENT_LINE), $(CURRENT_LINESTR), $(CURRENT_COLUMN), $(NPP_DIRECTORY), $(NPP_FULL_FILE_PATH), $(SYS.&amp;lt;ZMIENNA&amp;gt;)&lt;/small&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="52"/>
+      <location filename="../src/dialogs/RunDialog.cpp" line="229"/>
+      <source>Run</source>
+      <translation>Uruchom</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="53"/>
+      <source>Save...</source>
+      <translation>Zapisz...</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="54"/>
+      <source>Cancel</source>
+      <translation>Anuluj</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="68"/>
+      <source>The Program to Run</source>
+      <translation>Program do uruchomienia</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="80"/>
+      <source>Search on Google</source>
+      <translation>Szukaj w Google</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="81"/>
+      <source>Wikipedia Search</source>
+      <translation>Szukaj w Wikipedii</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="82"/>
+      <source>Open Containing Folder</source>
+      <translation>Otwórz folder zawierający</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="229"/>
+      <source>Unable to run &lt;b&gt;%1&lt;/b&gt;</source>
+      <translation>Nie można uruchomić &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="245"/>
+      <source>Save Command</source>
+      <translation>Zapisz polecenie</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="245"/>
+      <source>Name:</source>
+      <translation>Nazwa:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/RunDialog.cpp" line="260"/>
+      <source>Select a program</source>
+      <translation>Wybierz program</translation>
+    </message>
+  </context>
+  <context>
+    <name>ShortcutMapperDialog</name>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="69"/>
+      <source>Shortcut Mapper</source>
+      <translation>Mapowanie skrótów</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="75"/>
+      <source>Filter</source>
+      <translation>Filtr</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="80"/>
+      <source>Name</source>
+      <translation>Nazwa</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="80"/>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="258"/>
+      <source>Shortcut</source>
+      <translation>Skrót</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="80"/>
+      <source>Category</source>
+      <translation>Kategoria</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="89"/>
+      <source>Modify</source>
+      <translation>Zmień</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="90"/>
+      <source>Clear</source>
+      <translation>Wyczyść</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="91"/>
+      <source>Reset to Default</source>
+      <translation>Przywróć domyślny</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="92"/>
+      <source>Close</source>
+      <translation>Zamknij</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="106"/>
+      <source>Shortcuts shown in &lt;font color=&quot;red&quot;&gt;red&lt;/font&gt; are used by more than one command.</source>
+      <translation>Skróty oznaczone kolorem &lt;font color=&quot;red&quot;&gt;czerwonym&lt;/font&gt; są przypisane do więcej niż jednego polecenia.</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="143"/>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="144"/>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="163"/>
+      <source>Other</source>
+      <translation>Inne</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="267"/>
+      <source>Press the new shortcut for &lt;b&gt;%1&lt;/b&gt;:</source>
+      <translation>Naciśnij nowy skrót dla &lt;b&gt;%1&lt;/b&gt;:</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="289"/>
+      <source>Shortcut Conflict</source>
+      <translation>Konflikt skrótów</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/ShortcutMapperDialog.cpp" line="290"/>
+      <source>%1 is already used by: %2.&lt;br&gt;&lt;br&gt;Remove it from the other command(s)?</source>
+      <translation>Skrót %1 jest już używany przez: %2.&lt;br&gt;&lt;br&gt;Usunąć go z pozostałych poleceń?</translation>
+    </message>
+  </context>
+  <context>
+    <name>TextEncoding</name>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="252"/>
+      <source>Arabic</source>
+      <translation>Arabski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="257"/>
+      <source>Baltic</source>
+      <translation>Bałtycki</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="263"/>
+      <source>Celtic</source>
+      <translation>Celtycki</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="266"/>
+      <source>Cyrillic</source>
+      <translation>Cyrylica</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="275"/>
+      <source>Central European</source>
+      <translation>Środkowoeuropejski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="279"/>
+      <source>Chinese</source>
+      <translation>Chiński</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="284"/>
+      <source>Eastern European</source>
+      <translation>Wschodnioeuropejski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="287"/>
+      <source>Greek</source>
+      <translation>Grecki</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="293"/>
+      <source>Hebrew</source>
+      <translation>Hebrajski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="298"/>
+      <source>Japanese</source>
+      <translation>Japoński</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="302"/>
+      <source>Korean</source>
+      <translation>Koreański</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="306"/>
+      <source>North European</source>
+      <translation>Północnoeuropejski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="310"/>
+      <source>Thai</source>
+      <translation>Tajski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="313"/>
+      <source>Turkish</source>
+      <translation>Turecki</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="319"/>
+      <source>Western European</source>
+      <translation>Zachodnioeuropejski</translation>
+    </message>
+    <message>
+      <location filename="../src/TextEncoding.cpp" line="330"/>
+      <source>Vietnamese</source>
+      <translation>Wietnamski</translation>
+    </message>
+  </context>
+  <context>
+    <name>WindowsDialog</name>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="32"/>
+      <source>Windows</source>
+      <translation>Okna</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="38"/>
+      <source>Name</source>
+      <translation>Nazwa</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="38"/>
+      <source>Path</source>
+      <translation>Ścieżka</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="38"/>
+      <source>Type</source>
+      <translation>Typ</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="38"/>
+      <source>Size</source>
+      <translation>Rozmiar</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="48"/>
+      <source>&amp;Activate</source>
+      <translation>&amp;Aktywuj</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="49"/>
+      <source>&amp;Save</source>
+      <translation>&amp;Zapisz</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="50"/>
+      <source>&amp;Close window(s)</source>
+      <translation>Za&amp;mknij okno/okna</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="51"/>
+      <source>Sort &amp;tabs</source>
+      <translation>Sortuj &amp;karty</translation>
+    </message>
+    <message>
+      <location filename="../src/dialogs/WindowsDialog.cpp" line="52"/>
+      <source>&amp;OK</source>
+      <translation>&amp;OK</translation>
     </message>
   </context>
 </TS>
