@@ -1358,23 +1358,47 @@ void MainWindow::setupNppViewMenu()
     menuMove->addAction(moveToOtherView);
 
     QMenu *menuTab = new QMenu(tr("Tab"), this);
+
+    // Switches to the tab at the index of the current view, a negative index means the last tab
+    auto goToTab = [=](int index) {
+        ads::CDockAreaWidget *area = dockedEditor->currentDockArea();
+        if (area == Q_NULLPTR || area->dockWidgetsCount() == 0) {
+            return;
+        }
+
+        if (index < 0) {
+            index = area->dockWidgetsCount() - 1;
+        }
+
+        if (index < area->dockWidgetsCount()) {
+            ScintillaNext *editor = qobject_cast<ScintillaNext *>(area->dockWidget(index)->widget());
+            if (editor) {
+                dockedEditor->switchToEditor(editor);
+                editor->grabFocus();
+            }
+        }
+    };
+
+    // Like web browsers: Cmd/Ctrl+1 to Cmd/Ctrl+8 switch to that tab, Cmd/Ctrl+9 switches to the last tab.
+    // The numeric keypad works like Notepad++ (Ctrl+NumPad 1-9 switch to tab 1-9).
     const QStringList tabNames = {tr("1st Tab"), tr("2nd Tab"), tr("3rd Tab"), tr("4th Tab"), tr("5th Tab"), tr("6th Tab"), tr("7th Tab"), tr("8th Tab"), tr("9th Tab")};
     for (int i = 0; i < 9; ++i) {
-        QAction *tab = createAction(QStringLiteral("GoToTab%1").arg(i + 1), tabNames[i], QKeySequence(Qt::CTRL | Qt::KeypadModifier | static_cast<Qt::Key>(Qt::Key_1 + i)));
-        connect(tab, &QAction::triggered, this, [=]() {
-            ads::CDockAreaWidget *area = dockedEditor->currentDockArea();
-            if (area && i < area->dockWidgetsCount()) {
-                area->setCurrentIndex(i);
-            }
-        });
+        const Qt::Key key = static_cast<Qt::Key>(Qt::Key_1 + i);
+        QAction *tab = createAction(QStringLiteral("GoToTab%1").arg(i + 1), tabNames[i]);
+
+        QList<QKeySequence> shortcuts;
+        if (i < 8) {
+            shortcuts.append(QKeySequence(Qt::CTRL | key));
+        }
+        shortcuts.append(QKeySequence(Qt::CTRL | Qt::KeypadModifier | key));
+        tab->setShortcuts(shortcuts);
+
+        connect(tab, &QAction::triggered, this, [=]() { goToTab(i); });
         menuTab->addAction(tab);
     }
 
-    QAction *lastTab = createAction(QStringLiteral("GoToLastTab"), tr("Last Tab"));
-    connect(lastTab, &QAction::triggered, this, [=]() {
-        ads::CDockAreaWidget *area = dockedEditor->currentDockArea();
-        if (area) area->setCurrentIndex(area->dockWidgetsCount() - 1);
-    });
+    QAction *lastTab = createAction(QStringLiteral("GoToLastTab"), tr("Last Tab"), QKeySequence(Qt::CTRL | Qt::Key_9));
+    connect(lastTab, &QAction::triggered, this, [=]() { goToTab(-1); });
     menuTab->addAction(lastTab);
     menuTab->addSeparator();
 
