@@ -36,6 +36,7 @@
 #include "AutoCompletion.h"
 #include "URLFinder.h"
 #include "BookMarkDecorator.h"
+#include "HideLinesDecorator.h"
 #include "HTMLAutoCompleteDecorator.h"
 
 
@@ -404,6 +405,9 @@ void EditorManager::setupEditor(ScintillaNext *editor)
 
     BookMarkDecorator *bm = new BookMarkDecorator(editor);
     bm->setEnabled(true);
+
+    HideLinesDecorator *hl = new HideLinesDecorator(editor);
+    hl->setEnabled(true);
 
     new HTMLAutoCompleteDecorator(editor);
 }

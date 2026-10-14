@@ -46,6 +46,21 @@ public:
 
     int count() const;
 
+    // Editors in the same dock area ("view") as the given editor, in tab order
+    QVector<ScintillaNext *> editorsInSameView(const ScintillaNext *editor) const;
+
+    // Moves the tab of the editor to the index within its view
+    void moveEditorToIndex(ScintillaNext *editor, int index);
+
+    // Moves the editor to another view, creating a split view if there is only one (Notepad++'s "Move to Other View")
+    void moveEditorToOtherView(ScintillaNext *editor);
+
+    // The currently visible editor in a different view than the given editor, if there is one
+    ScintillaNext *editorInOtherView(const ScintillaNext *editor) const;
+
+    // Updates the tab icon (saved/unsaved/read-only)
+    void refreshEditorIcon(ScintillaNext *editor);
+
 public slots:
     void addEditor(ScintillaNext *editor);
 

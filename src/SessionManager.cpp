@@ -21,6 +21,7 @@
 #include "ScintillaNext.h"
 #include "MainWindow.h"
 #include "SessionManager.h"
+#include "TextEncoding.h"
 #include "EditorManager.h"
 #include "NotepadNextApplication.h"
 
@@ -76,7 +77,8 @@ QDir SessionManager::sessionDirectory() const
 
 void SessionManager::saveIntoSessionDirectory(ScintillaNext *editor, const QString &sessionFileName) const
 {
-    editor->saveCopyAs(sessionDirectory().filePath(sessionFileName));
+    // Always store the raw UTF-8 buffer, the original encoding is stored in the session settings
+    editor->writeRawCopy(sessionDirectory().filePath(sessionFileName));
 }
 
 SessionManager::SessionFileType SessionManager::determineType(ScintillaNext *editor) const
@@ -265,7 +267,13 @@ ScintillaNext* SessionManager::loadFileDetails(QSettings &settings)
     }
 
     if (QFileInfo::exists(filePath)) {
-        editor = ScintillaNext::fromFile(filePath);
+        // UTF-8 is always auto-detected, only force other encodings the user may have explicitly selected
+        QByteArray encoding = settings.value("Encoding").toByteArray();
+        if (TextEncoding::isUtf8(encoding)) {
+            encoding.clear();
+        }
+
+        editor = ScintillaNext::fromFile(filePath, false, encoding);
 
         app->getEditorManager()->manageEditor(editor);
 
@@ -310,7 +318,12 @@ ScintillaNext *SessionManager::loadUnsavedFileDetails(QSettings &settings)
     }
 
     if (QFileInfo::exists(filePath) && QFileInfo::exists(sessionFilePath)) {
-        ScintillaNext *editor = ScintillaNext::fromFile(sessionFilePath);
+        const bool hasEncodingInfo = settings.contains("Encoding");
+        ScintillaNext *editor = ScintillaNext::fromFile(sessionFilePath, false, hasEncodingInfo ? QByteArrayLiteral("UTF-8") : QByteArray());
+
+        if (hasEncodingInfo) {
+            editor->setEncoding(settings.value("Encoding").toByteArray(), static_cast<ScintillaNext::BomType>(settings.value("Bom").toInt()), false);
+        }
 
         // Since this editor has different file path info, treat this as a temporary buffer
         editor->setFileInfo(filePath);
@@ -355,7 +368,12 @@ ScintillaNext *SessionManager::loadTempFile(QSettings &settings)
     qDebug("Session temp file: \"%s\"", qUtf8Printable(fullFilePath));
 
     if (QFileInfo::exists(fullFilePath)) {
-        ScintillaNext *editor = ScintillaNext::fromFile(fullFilePath, false);
+        const bool hasEncodingInfo = settings.contains("Encoding");
+        ScintillaNext *editor = ScintillaNext::fromFile(fullFilePath, false, hasEncodingInfo ? QByteArrayLiteral("UTF-8") : QByteArray());
+
+        if (hasEncodingInfo) {
+            editor->setEncoding(settings.value("Encoding").toByteArray(), static_cast<ScintillaNext::BomType>(settings.value("Bom").toInt()), false);
+        }
 
         editor->detachFileInfo(fileName);
         editor->setTemporary(true);
@@ -381,6 +399,8 @@ void SessionManager::storeEditorViewDetails(ScintillaNext *editor, QSettings &se
 {
     settings.setValue("FirstVisibleLine", static_cast<int>(editor->firstVisibleLine() + 1)); // Keep it 1-based in the settings just for human-readability
     settings.setValue("CurrentPosition", static_cast<int>(editor->currentPos()));
+    settings.setValue("Encoding", editor->encoding());
+    settings.setValue("Bom", static_cast<int>(editor->bom()));
 
     BookMarkDecorator *decorator = editor->findChild<BookMarkDecorator*>(QString(), Qt::FindDirectChildrenOnly);
     QList<int> bookMarkedLines = decorator->bookMarkedLines();

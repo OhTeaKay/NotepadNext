@@ -22,6 +22,8 @@
 
 #include "EditorDecorator.h"
 
+#include <QStringList>
+
 
 class AutoCompletion : public EditorDecorator
 {
@@ -33,6 +35,13 @@ public:
 public slots:
     void notify(const Scintilla::NotificationData *pscn) override;
     void showAutoCompletion();
+
+    // Shows words from the document starting with the word being typed (Notepad++'s "Word Completion").
+    // Any extra words (e.g. language keywords) are included too.
+    void showWordCompletion(int minimumCharacters = 1, const QStringList &extraWords = QStringList());
+
+    // Completes file system paths (Notepad++'s "Path Completion")
+    void showPathCompletion();
 };
 
 #endif // AUTOCOMPLETION_H

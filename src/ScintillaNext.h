@@ -43,7 +43,7 @@ public:
     explicit ScintillaNext(QString name, QWidget *parent = Q_NULLPTR);
     virtual ~ScintillaNext();
 
-    static ScintillaNext *fromFile(const QString &filePath, bool tryToCreate=false);
+    static ScintillaNext *fromFile(const QString &filePath, bool tryToCreate=false, const QByteArray &encoding=QByteArray());
     static QString eolModeToString(int eolMode);
     static int stringToEolMode(QString eolMode);
 
@@ -116,6 +116,24 @@ public:
 
     BomType bom() const { return bomType; }
 
+    // The encoding (QTextCodec name) used when reading/writing the file. The buffer itself is always UTF-8.
+    QByteArray encoding() const { return encodingName; }
+    QString encodingDisplayName() const;
+    bool isUtf8() const;
+
+    // Change the encoding used when the file is saved ("Convert to..." in Notepad++).
+    // If markModified is true, the buffer is flagged as needing to be saved.
+    void setEncoding(const QByteArray &encoding, BomType bom, bool markModified = true);
+
+    // Re-read the file from disk interpreting it with a specific encoding
+    bool reloadWithEncoding(const QByteArray &encoding);
+
+    // Checks if the current text can be represented in the current encoding
+    bool canEncodeLosslessly();
+
+    // Writes the raw UTF-8 buffer (no BOM, no conversion), used for session backups
+    QFileDevice::FileError writeRawCopy(const QString &filePath);
+
     bool isTemporary() const { return temporary; }
     void setTemporary(bool temp);
 
@@ -153,6 +171,7 @@ signals:
 
     void lexerChanged();
     void reloaded();
+    void encodingChanged();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
@@ -162,13 +181,16 @@ private:
     QString name;
     BufferType bufferType = BufferType::New;
     BomType bomType = BomType::None;
+    QByteArray encodingName = QByteArrayLiteral("UTF-8");
+    bool encodingModified = false;
     QFileInfo fileInfo;
     QDateTime modifiedTime;
     RangeAllocator indicatorResources;
 
     bool temporary = false; // Temporary file loaded from a session. It can either be a 'New' file or actual 'File'
 
-    bool readFromDisk(QFile &file);
+    bool readFromDisk(QFile &file, const QByteArray &forcedEncoding = QByteArray());
+    QByteArray encodedText();
     QDateTime fileTimestamp();
     void updateTimestamp();
 

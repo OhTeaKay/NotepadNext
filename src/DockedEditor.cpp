@@ -30,6 +30,16 @@
 #include <QUuid>
 
 
+static QIcon iconForEditor(ScintillaNext *editor)
+{
+    if (editor->readOnly()) {
+        return QIcon(":/icons/readonly.png");
+    }
+
+    return QIcon(editor->canSaveToDisk() ? ":/icons/unsaved.png" : ":/icons/saved.png");
+}
+
+
 class DockedEditorComponentsFactory : public ads::CDockComponentsFactory
 {
 public:
@@ -189,18 +199,11 @@ void DockedEditor::addEditor(ScintillaNext *editor)
     }
 
     // Set the icon
-    if (editor->readOnly()) {
-        dockWidget->tabWidget()->setIcon(QIcon(":/icons/readonly.png"));
-    }
-    else {
-        dockWidget->tabWidget()->setIcon(QIcon(editor->canSaveToDisk() ? ":/icons/unsaved.png" : ":/icons/saved.png"));
-        connect(editor, &ScintillaNext::savePointChanged, dockWidget, [=](bool dirty) {
-            Q_UNUSED(dirty)
-            const bool actuallyDirty = editor->canSaveToDisk();
-            const QString iconPath = actuallyDirty ? ":/icons/unsaved.png" : ":/icons/saved.png";
-            dockWidget->tabWidget()->setIcon(QIcon(iconPath));
-        });
-    }
+    dockWidget->tabWidget()->setIcon(iconForEditor(editor));
+    connect(editor, &ScintillaNext::savePointChanged, dockWidget, [=](bool dirty) {
+        Q_UNUSED(dirty)
+        dockWidget->tabWidget()->setIcon(iconForEditor(editor));
+    });
 
     connect(editor, &ScintillaNext::closed, dockWidget, &ads::CDockWidget::closeDockWidget);
     connect(editor, &ScintillaNext::closed, this, [=]() { emit editorClosed(editor); });
@@ -226,5 +229,99 @@ void DockedEditor::editorRenamed(ScintillaNext *editor)
     }
     else {
         dockWidget->tabWidget()->setToolTip(editor->getName());
+    }
+}
+
+QVector<ScintillaNext *> DockedEditor::editorsInSameView(const ScintillaNext *editor) const
+{
+    QVector<ScintillaNext *> editors;
+    ads::CDockWidget *dockWidget = qobject_cast<ads::CDockWidget *>(editor->parentWidget());
+
+    if (dockWidget && dockWidget->dockAreaWidget()) {
+        for (const ads::CDockWidget *widget : dockWidget->dockAreaWidget()->dockWidgets()) {
+            editors.append(qobject_cast<ScintillaNext *>(widget->widget()));
+        }
+    }
+
+    return editors;
+}
+
+void DockedEditor::moveEditorToIndex(ScintillaNext *editor, int index)
+{
+    ads::CDockWidget *dockWidget = qobject_cast<ads::CDockWidget *>(editor->parentWidget());
+
+    if (dockWidget == Q_NULLPTR || dockWidget->dockAreaWidget() == Q_NULLPTR) {
+        return;
+    }
+
+    ads::CDockAreaWidget *area = dockWidget->dockAreaWidget();
+    const int count = area->dockWidgetsCount();
+
+    if (count < 2 || index < 0 || index >= count || area->dockWidgets().indexOf(dockWidget) == index) {
+        return;
+    }
+
+    dockManager->addDockWidget(ads::CenterDockWidgetArea, dockWidget, area, index);
+    dockWidget->raise();
+
+    emit editorOrderChanged();
+}
+
+void DockedEditor::moveEditorToOtherView(ScintillaNext *editor)
+{
+    ads::CDockWidget *dockWidget = qobject_cast<ads::CDockWidget *>(editor->parentWidget());
+
+    if (dockWidget == Q_NULLPTR || dockWidget->dockAreaWidget() == Q_NULLPTR) {
+        return;
+    }
+
+    ads::CDockAreaWidget *currentArea = dockWidget->dockAreaWidget();
+    ads::CDockAreaWidget *targetArea = Q_NULLPTR;
+
+    for (ads::CDockAreaWidget *area : dockManager->openedDockAreas()) {
+        if (area != currentArea) {
+            targetArea = area;
+            break;
+        }
+    }
+
+    if (targetArea) {
+        latestDockArea = dockManager->addDockWidget(ads::CenterDockWidgetArea, dockWidget, targetArea);
+    }
+    else if (currentArea->dockWidgetsCount() > 1) {
+        // Split the current view
+        latestDockArea = dockManager->addDockWidget(ads::RightDockWidgetArea, dockWidget, currentArea);
+    }
+    else {
+        // There is only one editor, it can't be moved anywhere
+        return;
+    }
+
+    dockWidget->raise();
+    dockWidget->setFocus();
+
+    emit editorOrderChanged();
+}
+
+ScintillaNext *DockedEditor::editorInOtherView(const ScintillaNext *editor) const
+{
+    ads::CDockWidget *dockWidget = qobject_cast<ads::CDockWidget *>(editor->parentWidget());
+    ads::CDockAreaWidget *currentArea = dockWidget ? dockWidget->dockAreaWidget() : Q_NULLPTR;
+
+    for (ads::CDockAreaWidget *area : dockManager->openedDockAreas()) {
+        if (area != currentArea && area->currentDockWidget()) {
+            return qobject_cast<ScintillaNext *>(area->currentDockWidget()->widget());
+        }
+    }
+
+    return Q_NULLPTR;
+}
+
+void DockedEditor::refreshEditorIcon(ScintillaNext *editor)
+{
+    ads::CDockWidget *dockWidget = qobject_cast<ads::CDockWidget *>(editor->parentWidget());
+
+    if (dockWidget) {
+        dockWidget->tabWidget()->setIcon(iconForEditor(editor));
     }
 }

@@ -48,6 +48,8 @@
 #include <QStyle>
 #include <QStyleHints>
 
+#include <algorithm>
+
 
 #ifdef Q_OS_WIN
 #include <QSimpleUpdater.h>
@@ -78,6 +80,8 @@
 #include "MacroSaveDialog.h"
 #include "PreferencesDialog.h"
 #include "ColumnEditorDialog.h"
+#include "ShortcutMapperDialog.h"
+#include "FileMonitor.h"
 
 #include "QuickFindWidget.h"
 
@@ -135,7 +139,7 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
 
     ui->setupUi(this);
 
-    applyCustomShortcuts();
+    // NOTE: custom shortcuts are applied once all the actions have been created (see setupNotepadPlusPlusFeatures())
 
     qInfo("setupUi Completed");
 
@@ -855,14 +859,18 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
     });
 
     connect(ui->menuMacro, &QMenu::aboutToShow, this, [=]() {
-        // NOTE: its unfortunate that this has to be hard coded, but there's no way
-        // to easily determine what should or shouldn't be there
-        while (ui->menuMacro->actions().size() > 6) {
-            delete ui->menuMacro->actions().takeLast();
+        // Remove the previously added macro entries, they are tagged with a property so
+        // other actions can be added to the menu without being removed
+        for (QAction *action : ui->menuMacro->actions()) {
+            if (action->property("nn_macro_entry").toBool()) {
+                ui->menuMacro->removeAction(action);
+                delete action;
+            }
         }
 
         for (const Macro *m : macroManager.availableMacros()) {
-            ui->menuMacro->addAction(m->getName(), [=]() { m->replay(currentEditor()); });
+            QAction *action = ui->menuMacro->addAction(m->getName(), [=]() { m->replay(currentEditor()); });
+            action->setProperty("nn_macro_entry", true);
         }
     });
 
@@ -961,6 +969,9 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
     // It seems restoreState() does not affect the status bar so set it manually
     ui->statusBar->setVisible(app->getSettings()->showStatusBar());
 
+    // Everything that makes this feel like Notepad++ (menus, panels, dialogs)
+    setupNotepadPlusPlusFeatures();
+
     setupLanguageMenu();
 
     applyTheme();
@@ -977,6 +988,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::applyCustomShortcuts()
 {
+    // Remember the original shortcuts so the Shortcut Mapper can restore them
+    ShortcutMapperDialog::storeDefaultShortcuts(this);
+
     ApplicationSettings *settings = app->getSettings();
     settings->beginGroup("Shortcuts");
 
@@ -994,8 +1008,15 @@ void MainWindow::applyCustomShortcuts()
             continue;
         }
 
+        // A list of only empty strings means the user removed all shortcuts for this action
+        const QStringList shortcutStrings = value.toStringList();
+        if (!shortcutStrings.isEmpty() && std::all_of(shortcutStrings.begin(), shortcutStrings.end(), [](const QString &s) { return s.isEmpty(); })) {
+            action->setShortcuts(QList<QKeySequence>());
+            continue;
+        }
+
         QList<QKeySequence> shortcuts;
-        for (const QString &shortcutString : value.toStringList()) {
+        for (const QString &shortcutString : shortcutStrings) {
             auto sequence = QKeySequence(shortcutString);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
@@ -1769,6 +1790,7 @@ void MainWindow::updateGui(ScintillaNext *editor)
     updateSelectionBasedUi(editor);
     updateContentBasedUi(editor);
     updateLanguageBasedUi(editor);
+    updateNppUi(editor);
 }
 
 void MainWindow::updateDocumentBasedUi(Scintilla::Update updated)
@@ -1805,6 +1827,10 @@ void MainWindow::updateContentBasedUi(ScintillaNext *editor)
     ui->actionURLEncode->setEnabled(hasAnySelections);
     ui->actionBase64Decode->setEnabled(hasAnySelections);
     ui->actionURLDecode->setEnabled(hasAnySelections);
+
+    for (QAction *a : selectionBasedActions) {
+        a->setEnabled(hasAnySelections);
+    }
 }
 
 void MainWindow::detectLanguage(ScintillaNext *editor)
@@ -1961,6 +1987,11 @@ bool MainWindow::checkFileForModification(ScintillaNext *editor)
 {
     qInfo(Q_FUNC_INFO);
 
+    // Files being monitored (tail -f) are reloaded automatically
+    if (fileMonitor && fileMonitor->isMonitored(editor)) {
+        return false;
+    }
+
     auto state = editor->checkFileForStateChange();
 
     if (state == ScintillaNext::NoChange) {
@@ -2108,6 +2139,11 @@ void MainWindow::addEditor(ScintillaNext *editor)
     connect(editor, &ScintillaNext::renamed, this, [=]() { detectLanguage(editor); });
     connect(editor, &ScintillaNext::renamed, this, [=]() { updateFileStatusBasedUi(editor); });
     connect(editor, &ScintillaNext::updateUi, this, &MainWindow::updateDocumentBasedUi);
+    connect(editor, &ScintillaNext::encodingChanged, this, [=]() {
+        if (editor == currentEditor()) {
+            updateEncodingBasedUi(editor);
+        }
+    });
 
     // Watch for any zoom events (Ctrl+Scroll or pinch-to-zoom (Qt translates it as Ctrl+Scroll)) so that the event
     // can be handled before the ScintillaEditBase widget, so that it can be applied to all editors to keep zoom level equal.
@@ -2120,6 +2156,7 @@ void MainWindow::addEditor(ScintillaNext *editor)
     connect(editor, &ScintillaNext::customContextMenuRequested, this, [=](const QPoint &pos) {
         contextMenuPos = editor->positionFromPoint(pos.x(), pos.y());
 
+        // Similar to the default context menu of Notepad++
         QStringList actionNames = {
             "Cut",
             "Copy",
@@ -2127,6 +2164,19 @@ void MainWindow::addEditor(ScintillaNext *editor)
             "Delete",
             "",
             "SelectAll",
+            "BeginEndSelect",
+            "",
+            "UpperCase",
+            "LowerCase",
+            "",
+            "OpenFileInSelection",
+            "SearchOnInternet",
+            "",
+            "ToggleSingleLineComment",
+            "BlockComment",
+            "BlockUncomment",
+            "",
+            "HideLines",
             "",
             "Base64Encode",
             "URLEncode",
@@ -2339,26 +2389,34 @@ void MainWindow::tabBarRightClicked(ScintillaNext *editor)
     dockedEditor->switchToEditor(editor);
 
     // Default actions
+    // Similar to the tab context menu of Notepad++
     QStringList actionNames{
         "Close",
         "CloseAllExceptActive",
         "CloseAllToLeft",
         "CloseAllToRight",
+        "CloseAllUnchanged",
         "",
         "Save",
         "SaveAs",
-        "Rename",
         "",
-        "Reload",
-        "",
-#ifdef Q_OS_WIN
         "ShowInExplorer",
         "OpenTerminalHere",
+        "OpenInDefaultViewer",
         "",
-#endif
+        "Rename",
+        "MoveToTrash",
+        "Reload",
+        "Print",
+        "",
+        "SetReadOnly",
+        "ClearReadOnlyFlag",
+        "",
         "CopyFullPath",
         "CopyFileName",
-        "CopyFileDirectory"
+        "CopyFileDirectory",
+        "",
+        "MoveToOtherView"
     };
 
     // If the entry exists in the settings, use that

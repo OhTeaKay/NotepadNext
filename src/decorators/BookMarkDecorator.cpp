@@ -18,6 +18,7 @@
 
 
 #include "BookMarkDecorator.h"
+#include "HideLinesDecorator.h"
 #include "UndoAction.h"
 
 const int MARK_BOOKMARK = 24;
@@ -170,6 +171,12 @@ void BookMarkDecorator::notify(const Scintilla::NotificationData *pscn)
     if (pscn->nmhdr.code == Scintilla::Notification::MarginClick) {
         if (pscn->margin == MARGIN) {
             int line = editor->lineFromPosition(pscn->position);
+
+            // Clicking on a "hidden lines" marker shows the lines instead of toggling a bookmark
+            if (HideLinesDecorator::lineHasHideMarker(editor, line)) {
+                return;
+            }
+
             toggleBookmark(line);
         }
     }

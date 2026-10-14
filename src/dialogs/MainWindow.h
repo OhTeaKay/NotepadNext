@@ -23,6 +23,7 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QActionGroup>
+#include <QPointer>
 
 #include "DockedEditor.h"
 
@@ -42,6 +43,9 @@ class QuickFindWidget;
 class ZoomEventWatcher;
 class Converter;
 class DefaultDirectoryManager;
+class FileMonitor;
+class ScrollSynchronizer;
+class QPushButton;
 
 class MainWindow : public QMainWindow
 {
@@ -127,6 +131,10 @@ public slots:
 
     void switchToEditor(const ScintillaNext *editor);
 
+    // Notepad++ style sessions (compatible with Notepad++'s session.xml files)
+    bool saveNppSession(const QString &filePath);
+    bool loadNppSession(const QString &filePath);
+
 signals:
     void editorActivated(ScintillaNext *editor);
     void aboutToClose();
@@ -178,6 +186,58 @@ private:
     int zoomLevel = 0;
     int contextMenuPos = 0;
     QMenu *buildMenu(QStringList actionNames);
+
+    // Notepad++ features (see MainWindowNpp.cpp)
+    void setupNotepadPlusPlusFeatures();
+    void setupNppFileMenu();
+    void setupNppEditMenu();
+    void setupNppSearchMenu();
+    void setupNppViewMenu();
+    void setupNppEncodingMenu();
+    void setupNppSettingsMenu();
+    void setupNppToolsMenu();
+    void setupNppMacroMenu();
+    void setupNppRunMenu();
+    void setupNppWindowMenu();
+    void setupNppHelpMenu();
+    void setupNppDocks();
+
+    QAction *createAction(const QString &name, const QString &text, const QKeySequence &shortcut = QKeySequence());
+    QAction *action(const QString &name) const;
+
+    void updateNppUi(ScintillaNext *editor);
+    void updateEncodingBasedUi(ScintillaNext *editor);
+    void changeEncoding(const QByteArray &encoding, ScintillaNext::BomType bom, bool convert);
+
+    void selectAndFind(bool forward, bool updateSearchText);
+    void insertDateTime(int format);
+    void showSummary();
+    void togglePostIt(bool enable);
+    void toggleDistractionFree(bool enable);
+    void openFileInSelection();
+    void sortTabs(int column, bool ascending);
+    void goToSearchResultInFile(const QString &filePath, int lineNumber, int startPositionFromBeginning, int endPositionFromBeginning);
+
+    QActionGroup *encodingActionGroup = Q_NULLPTR;
+    QList<QAction *> selectionBasedActions; // Only enabled when there is a selection
+    QList<QAction *> runMenuDynamicActions;
+    FileMonitor *fileMonitor = Q_NULLPTR;
+    ScrollSynchronizer *scrollSynchronizer = Q_NULLPTR;
+    QPointer<ScintillaNext> beginSelectEditor;
+    int beginSelectPosition = -1;
+
+    struct HiddenUiState {
+        bool active = false;
+        bool toolBarVisible = true;
+        bool statusBarVisible = true;
+        bool wasFullScreen = false;
+        bool wasMaximized = false;
+        Qt::WindowFlags windowFlags;
+        QList<QPointer<QWidget>> hiddenDocks;
+    };
+    HiddenUiState postItState;
+    HiddenUiState distractionFreeState;
+    QPushButton *exitDistractionFreeButton = Q_NULLPTR;
 };
 
 #endif // MAINWINDOW_H

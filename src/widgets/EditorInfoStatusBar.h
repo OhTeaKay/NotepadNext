@@ -40,6 +40,8 @@ public:
 
 signals:
     void customContextMenuRequestedForEOLLabel(const QPoint &pos);
+    void customContextMenuRequestedForEncodingLabel(const QPoint &pos);
+    void customContextMenuRequestedForLanguageLabel(const QPoint &pos);
 
 private slots:
     void connectToEditor(ScintillaNext *editor);
@@ -63,6 +65,7 @@ private:
 
     QMetaObject::Connection editorUiUpdated;
     QMetaObject::Connection documentLexerChanged;
+    QMetaObject::Connection documentEncodingChanged;
 };
 
 #endif // EDITORINFOSTATUSBAR_H
