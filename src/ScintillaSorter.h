@@ -31,6 +31,6 @@ public:
 private:
     ScintillaNext *editor;
 
-    const QByteArray readEditorText();
-    void writeEditorText(const QByteArray &result);
+    const QByteArray readEditorText(int start, int end);
+    void writeEditorText(int start, int end, const QByteArray &result);
 };

@@ -28,8 +28,18 @@ public:
     explicit MarkerAppDecorator(NotepadNextApplication *app);
 
     QColor markerColor(int i) const;
+    int markerCount() const;
 
     void mark(ScintillaNext *editor, int i);
     void clear(ScintillaNext *editor, int i);
     void clearAll(ScintillaNext *editor);
+
+    // All ranges marked with style i (or any style if i is -1), in document order
+    QList<QPair<int, int>> markedRanges(ScintillaNext *editor, int i) const;
+
+    // Jump to the next/previous range marked with style i (or any style if i is -1)
+    bool jumpToMarked(ScintillaNext *editor, int i, bool forward) const;
+
+    // The text of all ranges marked with style i (or any style if i is -1), one per line
+    QString markedText(ScintillaNext *editor, int i) const;
 };

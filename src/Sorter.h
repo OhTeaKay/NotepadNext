@@ -70,3 +70,40 @@ public:
     void sort(QVector<QByteArrayView> &lines) const override;
 };
 
+
+
+// Sorts lines by their numeric value. Lines that are not numbers are kept at the end in their original order.
+class IntegerSorter : public Sorter
+{
+public:
+    using Sorter::Sorter;
+    void sort(QVector<QByteArrayView> &lines) const override;
+};
+
+
+class DecimalSorter : public Sorter
+{
+public:
+    DecimalSorter(Direction direction, bool commaIsDecimalSeparator) : Sorter(direction), comma(commaIsDecimalSeparator) {}
+    void sort(QVector<QByteArrayView> &lines) const override;
+
+private:
+    bool comma;
+};
+
+
+// Sorts lines according to the rules of the current locale (e.g. accented letters are sorted next to their base letter)
+class LocaleSorter : public Sorter
+{
+public:
+    using Sorter::Sorter;
+    void sort(QVector<QByteArrayView> &lines) const override;
+};
+
+
+class RandomSorter : public Sorter
+{
+public:
+    RandomSorter() : Sorter(Direction::Ascending) {}
+    void sort(QVector<QByteArrayView> &lines) const override;
+};

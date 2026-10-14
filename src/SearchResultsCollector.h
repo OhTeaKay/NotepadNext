@@ -30,6 +30,7 @@ public:
 
     void newSearch(const QString searchTerm) override;
     void newFileEntry(ScintillaNext *editor) override;
+    void newFilePathEntry(const QString &filePath) override;
     void newResultsEntry(const QString line, int lineNumber, int startPositionFromBeginning, int endPositionFromBeginning, int hitCount=1) override;
     void completeSearch() override;
 

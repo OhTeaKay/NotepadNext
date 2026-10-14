@@ -26,26 +26,49 @@ ScintillaSorter::ScintillaSorter(ScintillaNext *editor)
 
 void ScintillaSorter::sort(const Sorter &sorter)
 {
+    // Like Notepad++, if multiple lines are selected only those lines are sorted, else the entire document
+    int startPos = 0;
+    int endPos = editor->length();
+    bool usingSelection = false;
+
+    if (!editor->selectionEmpty()) {
+        int firstLine = editor->lineFromPosition(editor->selectionStart());
+        int lastLine = editor->lineFromPosition(editor->selectionEnd());
+
+        if (lastLine > firstLine && editor->selectionEnd() == editor->positionFromLine(lastLine)) {
+            lastLine--;
+        }
+
+        if (lastLine > firstLine) {
+            startPos = editor->positionFromLine(firstLine);
+            endPos = editor->lineEndPosition(lastLine);
+            usingSelection = true;
+        }
+    }
+
     const QByteArray eol = editor->eolString();
-    const QByteArray text = readEditorText();
+    const QByteArray text = readEditorText(startPos, endPos);
     QVector<QByteArrayView> lines = ByteArrayUtils::split(text, eol);
 
     sorter.sort(lines);
 
     QByteArray result = ByteArrayUtils::join(lines, eol);
-    writeEditorText(result);
+    writeEditorText(startPos, endPos, result);
+
+    if (usingSelection) {
+        editor->setSelection(startPos + result.size(), startPos);
+    }
 }
 
-const QByteArray ScintillaSorter::readEditorText()
+const QByteArray ScintillaSorter::readEditorText(int start, int end)
 {
     sptr_t pointer = editor->characterPointer();
-    int len = editor->length();
 
-    return QByteArray::fromRawData(reinterpret_cast<const char *>(pointer), len);
+    return QByteArray::fromRawData(reinterpret_cast<const char *>(pointer) + start, end - start);
 }
 
-void ScintillaSorter::writeEditorText(const QByteArray &result)
+void ScintillaSorter::writeEditorText(int start, int end, const QByteArray &result)
 {
-    editor->targetWholeDocument();
-    editor->replaceTarget(-1, result.constData());
+    editor->setTargetRange(start, end);
+    editor->replaceTarget(result.size(), result.constData());
 }

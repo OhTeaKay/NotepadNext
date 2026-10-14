@@ -125,6 +125,23 @@ void SearchResultsDock::newFileEntry(ScintillaNext *editor)
     updateSearchStatus();
 }
 
+void SearchResultsDock::newFilePathEntry(const QString &filePath)
+{
+    totalFileHitCount = 0;
+    currentFilePath = filePath;
+
+    currentFile = new QTreeWidgetItem(currentSearch);
+    currentFile->setData(0, Qt::UserRole + 1, filePath);
+    currentFile->setBackground(0, QColor(213, 255, 213));
+    currentFile->setForeground(0, QColor(0, 128, 0));
+    currentFile->setExpanded(true);
+    currentFile->setFirstColumnSpanned(true);
+
+    currentFileCount++;
+
+    updateSearchStatus();
+}
+
 void SearchResultsDock::newResultsEntry(const QString line, int lineNumber, int startPositionFromBeginning, int endPositionFromBeginning, int hitCount)
 {
     QTreeWidgetItem *item = new QTreeWidgetItem(currentFile);
@@ -196,13 +213,21 @@ void SearchResultsDock::itemActivated(QTreeWidgetItem *item, int column)
     if (item->childCount() == 0 && item->parent() != Q_NULLPTR) {
         QPointer<ScintillaNext> editor = item->parent()->data(0, Qt::UserRole).value<QPointer<ScintillaNext>>();
 
+        int lineNumber = item->data(1, SearchResultData::LineNumber).toInt();
+        int startPositionFromBeginning = item->data(1, SearchResultData::LinePosStart).toInt();
+        int endPositionFromBeginning = item->data(1, SearchResultData::LinePosEnd).toInt();
+
         // The editor may no longer exist
         if (editor) {
-            int lineNumber = item->data(1, SearchResultData::LineNumber).toInt();
-            int startPositionFromBeginning = item->data(1, SearchResultData::LinePosStart).toInt();
-            int endPositionFromBeginning = item->data(1, SearchResultData::LinePosEnd).toInt();
-
             emit searchResultActivated(editor, lineNumber, startPositionFromBeginning, endPositionFromBeginning);
+        }
+        else {
+            // Results from files that were not open in an editor (e.g. Find in Files)
+            const QString filePath = item->parent()->data(0, Qt::UserRole + 1).toString();
+
+            if (!filePath.isEmpty()) {
+                emit searchResultInFileActivated(filePath, lineNumber, startPositionFromBeginning, endPositionFromBeginning);
+            }
         }
     }
 }

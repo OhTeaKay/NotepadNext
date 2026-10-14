@@ -20,11 +20,16 @@
 #include "EditorManager.h"
 #include "ScintillaNext.h"
 
+#include <algorithm>
 
+
+// Same colors as the 5 "Mark Styles" of Notepad++
 static QList<QColor> marker_colors = {
     QColor(0x00, 0xFF, 0xFF),
     QColor(0xFF, 0x80, 0x00),
-    QColor(0xFF, 0xFF, 0x00)
+    QColor(0xFF, 0xFF, 0x00),
+    QColor(0x80, 0x00, 0xFF),
+    QColor(0x00, 0x80, 0x00)
 };
 
 static int QColorToScintillaColour(QColor c)
@@ -51,6 +56,92 @@ MarkerAppDecorator::MarkerAppDecorator(NotepadNextApplication *app)
 QColor MarkerAppDecorator::markerColor(int i) const
 {
     return marker_colors[i];
+}
+
+int MarkerAppDecorator::markerCount() const
+{
+    return marker_colors.size();
+}
+
+QList<QPair<int, int>> MarkerAppDecorator::markedRanges(ScintillaNext *editor, int i) const
+{
+    QList<QPair<int, int>> ranges;
+
+    const int first = i < 0 ? 0 : i;
+    const int last = i < 0 ? marker_colors.size() - 1 : i;
+    const int length = editor->length();
+
+    for (int m = first; m <= last; ++m) {
+        const int indicator = editor->allocateIndicator(QStringLiteral("marker_%1").arg(m));
+        int pos = 0;
+
+        while (pos < length) {
+            const int end = editor->indicatorEnd(indicator, pos);
+
+            if (editor->indicatorValueAt(indicator, pos) != 0) {
+                ranges.append({pos, end});
+            }
+
+            if (end <= pos) {
+                break;
+            }
+
+            pos = end;
+        }
+    }
+
+    std::sort(ranges.begin(), ranges.end());
+
+    return ranges;
+}
+
+bool MarkerAppDecorator::jumpToMarked(ScintillaNext *editor, int i, bool forward) const
+{
+    const QList<QPair<int, int>> ranges = markedRanges(editor, i);
+
+    if (ranges.isEmpty()) {
+        return false;
+    }
+
+    QPair<int, int> target;
+
+    if (forward) {
+        const int pos = editor->selectionEnd();
+        target = ranges.first(); // wrap around
+
+        for (const auto &range : ranges) {
+            if (range.first >= pos) {
+                target = range;
+                break;
+            }
+        }
+    }
+    else {
+        const int pos = editor->selectionStart();
+        target = ranges.last(); // wrap around
+
+        for (auto it = ranges.crbegin(); it != ranges.crend(); ++it) {
+            if (it->second <= pos) {
+                target = *it;
+                break;
+            }
+        }
+    }
+
+    editor->goToRange({target.first, target.second});
+
+    return true;
+}
+
+QString MarkerAppDecorator::markedText(ScintillaNext *editor, int i) const
+{
+    QStringList lines;
+
+    for (const auto &range : markedRanges(editor, i)) {
+        lines.append(QString::fromUtf8(editor->get_text_range(range.first, range.second)));
+    }
+
+    return lines.join(QString::fromUtf8(editor->eolString()));
 }
 
 void MarkerAppDecorator::mark(ScintillaNext *editor, int i)

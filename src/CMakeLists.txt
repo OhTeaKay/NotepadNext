@@ -181,6 +181,26 @@ qt_add_executable(NotepadNext
 	widgets/StatusLabel.h
 	Sorter.h Sorter.cpp
 	ScintillaSorter.h ScintillaSorter.cpp
+
+	# Notepad++ style features
+	EditOperations.h EditOperations.cpp
+	FileMonitor.h FileMonitor.cpp
+	FunctionListParser.h FunctionListParser.cpp
+	ScrollSynchronizer.h ScrollSynchronizer.cpp
+	TextEncoding.h TextEncoding.cpp
+	decorators/HideLinesDecorator.h decorators/HideLinesDecorator.cpp
+	dialogs/MainWindowNpp.cpp
+	dialogs/FindCharactersInRangeDialog.h dialogs/FindCharactersInRangeDialog.cpp
+	dialogs/FindInFilesDialog.h dialogs/FindInFilesDialog.cpp
+	dialogs/HashGeneratorDialog.h dialogs/HashGeneratorDialog.cpp
+	dialogs/MarkDialog.h dialogs/MarkDialog.cpp
+	dialogs/RunDialog.h dialogs/RunDialog.cpp
+	dialogs/ShortcutMapperDialog.h dialogs/ShortcutMapperDialog.cpp
+	dialogs/WindowsDialog.h dialogs/WindowsDialog.cpp
+	docks/CharacterPanelDock.h docks/CharacterPanelDock.cpp
+	docks/ClipboardHistoryDock.h docks/ClipboardHistoryDock.cpp
+	docks/DocumentMapDock.h docks/DocumentMapDock.cpp
+	docks/FunctionListDock.h docks/FunctionListDock.cpp
 )
 
 set_target_properties(NotepadNext PROPERTIES

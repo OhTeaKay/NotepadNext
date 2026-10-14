@@ -30,8 +30,11 @@ void SearchResultHighlighterDelegate::paint(QPainter *painter, const QStyleOptio
     }
 
     const QString text = index.data(Qt::DisplayRole).toString();
-    int start = index.data(SearchResultData::LinePosStart).toInt();
-    int end = index.data(SearchResultData::LinePosEnd).toInt();
+
+    // The positions are UTF-8 byte offsets (like Scintilla uses), convert them to character positions
+    const QByteArray utf8 = text.toUtf8();
+    int start = QString::fromUtf8(utf8.left(index.data(SearchResultData::LinePosStart).toInt())).size();
+    int end = QString::fromUtf8(utf8.left(index.data(SearchResultData::LinePosEnd).toInt())).size();
 
     QStyleOptionViewItem opt(option);
     initStyleOption(&opt, index);

@@ -28,6 +28,10 @@ EditorInfoStatusBar::EditorInfoStatusBar(QMainWindow *window) :
     // Set up the status bar
     docType = new StatusLabel();
     addWidget(docType, 1);
+    docType->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(qobject_cast<StatusLabel*>(docType), &StatusLabel::customContextMenuRequested, this, [=](const QPoint &pos) {
+        emit customContextMenuRequestedForLanguageLabel(docType->mapToGlobal(pos));
+    });
 
     docSize = new StatusLabel(200);
     addPermanentWidget(docSize, 0);
@@ -44,6 +48,10 @@ EditorInfoStatusBar::EditorInfoStatusBar(QMainWindow *window) :
 
     unicodeType = new StatusLabel(125);
     addPermanentWidget(unicodeType, 0);
+    unicodeType->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(qobject_cast<StatusLabel*>(unicodeType), &StatusLabel::customContextMenuRequested, this, [=](const QPoint &pos) {
+        emit customContextMenuRequestedForEncodingLabel(unicodeType->mapToGlobal(pos));
+    });
 
     overType = new StatusLabel(25);
     addPermanentWidget(overType, 0);
@@ -74,10 +82,12 @@ void EditorInfoStatusBar::connectToEditor(ScintillaNext *editor)
     // Remove any previous connections
     disconnect(editorUiUpdated);
     disconnect(documentLexerChanged);
+    disconnect(documentEncodingChanged);
 
     // Connect to the new editor
     editorUiUpdated = connect(editor, &ScintillaNext::updateUi, this, &EditorInfoStatusBar::editorUpdated);
     documentLexerChanged = connect(editor, &ScintillaNext::lexerChanged, this, [=]() { updateLanguage(editor); });
+    documentEncodingChanged = connect(editor, &ScintillaNext::encodingChanged, this, [=]() { updateEncoding(editor); });
 
     refresh(editor);
 }
@@ -149,25 +159,7 @@ void EditorInfoStatusBar::updateEol(ScintillaNext *editor)
 
 void EditorInfoStatusBar::updateEncoding(ScintillaNext *editor)
 {
-    QString text;
-    switch(editor->codePage()) {
-    case 0:
-        text = tr("ANSI");
-        break;
-    case SC_CP_UTF8:
-        switch (editor->bom()) {
-        case ScintillaNext::BomType::None:    text = tr("UTF-8"); break;
-        case ScintillaNext::BomType::Utf8:    text = tr("UTF-8 BOM"); break;
-        case ScintillaNext::BomType::Utf16LE: text = tr("UTF-16LE BOM"); break;
-        case ScintillaNext::BomType::Utf16BE: text = tr("UTF-16BE BOM"); break;
-        }
-        break;
-    default:
-        text = QString::number(editor->codePage());
-        break;
-    }
-
-    unicodeType->setText(text);
+    unicodeType->setText(editor->encodingDisplayName());
 }
 
 void EditorInfoStatusBar::updateOverType(ScintillaNext *editor)

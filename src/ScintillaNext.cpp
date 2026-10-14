@@ -22,8 +22,9 @@
 #include "ScintillaCommenter.h"
 
 #include "ByteArrayUtils.h"
-#include "uchardet.h"
+#include "TextEncoding.h"
 #include <cinttypes>
+#include <memory>
 
 #include <QDir>
 #include <QMouseEvent>
@@ -55,6 +56,17 @@ QByteArray bomData(ScintillaNext::BomType bom)
     case ScintillaNext::BomType::None:    return QByteArray();
     }
     return QByteArray();
+}
+
+static ScintillaNext::BomType bomForEncoding(const QByteArray &encoding)
+{
+    if (TextEncoding::isUtf8(encoding)) return ScintillaNext::BomType::Utf8;
+
+    const QByteArray canonical = TextEncoding::canonicalName(encoding);
+    if (canonical == TextEncoding::canonicalName(TextEncoding::UTF16LE)) return ScintillaNext::BomType::Utf16LE;
+    if (canonical == TextEncoding::canonicalName(TextEncoding::UTF16BE)) return ScintillaNext::BomType::Utf16BE;
+
+    return ScintillaNext::BomType::None;
 }
 
 int bomLength(ScintillaNext::BomType bom)
@@ -112,7 +124,7 @@ ScintillaNext::~ScintillaNext()
 {
 }
 
-ScintillaNext *ScintillaNext::fromFile(const QString &filePath, bool tryToCreate)
+ScintillaNext *ScintillaNext::fromFile(const QString &filePath, bool tryToCreate, const QByteArray &encoding)
 {
     QFile file(filePath);
     ScintillaNext *editor = new ScintillaNext(file.fileName());
@@ -127,7 +139,7 @@ ScintillaNext *ScintillaNext::fromFile(const QString &filePath, bool tryToCreate
         f.close();
     }
 
-    bool readSuccessful = editor->readFromDisk(file);
+    bool readSuccessful = editor->readFromDisk(file, encoding);
 
     if (!readSuccessful) {
         delete editor;
@@ -273,6 +285,7 @@ bool ScintillaNext::canSaveToDisk() const
     // - A modified file
     // - A missing file since as soon as it is saved it is no longer missing.
     return temporary ||
+           encodingModified ||
            (bufferType == ScintillaNext::New && modify()) ||
            (bufferType == ScintillaNext::File && modify()) ||
             (bufferType == ScintillaNext::FileMissing);
@@ -348,12 +361,13 @@ QFileDevice::FileError ScintillaNext::save()
 
     emit aboutToSave();
 
-    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    const QByteArray data = encodedText();
     const QString path = fileInfo.filePath();
     QFileDevice::FileError writeSuccessful = writeToDisk(data, path, bomType);
 
     if (writeSuccessful == QFileDevice::NoError) {
         updateTimestamp();
+        encodingModified = false;
         setSavePoint();
 
         // If this was a temporary file, make sure it is not any more
@@ -378,6 +392,10 @@ void ScintillaNext::reload()
     const int caret = selectionNCaret(mainSelection());
     const int anchor = selectionNAnchor(mainSelection());
 
+    // The text can't be changed while the document is read-only
+    const bool wasReadOnly = readOnly();
+    setReadOnly(false);
+
     // Remove all the text
     {
         const QSignalBlocker blocker(this);
@@ -390,18 +408,26 @@ void ScintillaNext::reload()
     // NOTE: if the read fails then the buffer will be completely empty...which probably
     // isn't a good thing, but this should be a rare occurrence.
     QFile f(fileInfo.canonicalFilePath());
-    bool readSuccessful = readFromDisk(f);
+    bool readSuccessful = readFromDisk(f, encodingName);
+
+    if (wasReadOnly) {
+        setReadOnly(true);
+    }
 
     if (!readSuccessful) {
         return;
     }
 
     updateTimestamp();
+    const bool wasEncodingModified = encodingModified;
+    encodingModified = false;
     setSavePoint();
 
     // If this was a temporary file, make sure it is not any more
     if (isTemporary())
         setTemporary(false);
+    else if (wasEncodingModified)
+        emit savePointChanged(false);
 
     scrollVertical(line, 0);
     setSelection(caret, anchor);
@@ -425,11 +451,12 @@ QFileDevice::FileError ScintillaNext::saveAs(const QString &newFilePath)
 
     emit aboutToSave();
 
-    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    const QByteArray data = encodedText();
     QFileDevice::FileError saveSuccessful = writeToDisk(data, newFilePath, bomType);
 
     if (saveSuccessful == QFileDevice::NoError) {
         setFileInfo(newFilePath);
+        encodingModified = false;
         setSavePoint();
 
         // If this was a temporary file, make sure it is not any more
@@ -447,8 +474,14 @@ QFileDevice::FileError ScintillaNext::saveAs(const QString &newFilePath)
 
 QFileDevice::FileError ScintillaNext::saveCopyAs(const QString &filePath)
 {
-    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    const QByteArray data = encodedText();
     return writeToDisk(data, filePath, bomType);
+}
+
+QFileDevice::FileError ScintillaNext::writeRawCopy(const QString &filePath)
+{
+    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    return writeToDisk(data, filePath, BomType::None);
 }
 
 bool ScintillaNext::rename(const QString &newFilePath)
@@ -456,13 +489,14 @@ bool ScintillaNext::rename(const QString &newFilePath)
     emit aboutToSave();
 
     // Write out the buffer to the new path
-    if (saveCopyAs(newFilePath)) {
+    if (saveCopyAs(newFilePath) == QFileDevice::NoError) {
         // Remove the old file
         const QString oldPath = fileInfo.canonicalFilePath();
         QFile::remove(oldPath);
 
         // Everything worked fine, so update the buffer's info
         setFileInfo(newFilePath);
+        encodingModified = false;
         setSavePoint();
 
         // If this was a temporary file, make sure it is not any more
@@ -611,7 +645,7 @@ void ScintillaNext::dropEvent(QDropEvent *event)
     ScintillaEdit::dropEvent(event);
 }
 
-bool ScintillaNext::readFromDisk(QFile &file)
+bool ScintillaNext::readFromDisk(QFile &file, const QByteArray &forcedEncoding)
 {
     if (!file.exists()) {
         qWarning("Cannot read \"%s\": doesn't exist", qUtf8Printable(file.fileName()));
@@ -635,40 +669,83 @@ bool ScintillaNext::readFromDisk(QFile &file)
     QByteArray chunk;
     qint64 bytesRead;
 
+    // Only used when the file is not UTF-8. A decoder keeps state between chunks so
+    // multi-byte characters that are split across chunks are handled correctly
+    std::unique_ptr<QTextDecoder> decoder;
+
     bool first_read = true;
     do {
         // Try to read as much as possible
         chunk.resize(CHUNK_SIZE);
         bytesRead = file.read(chunk.data(), CHUNK_SIZE);
+
+        if (bytesRead < 0) {
+            break;
+        }
+
         chunk.resize(bytesRead);
 
         qDebug("Read %lld bytes", bytesRead);
 
-        // TODO: this needs moved out of here. Would make much more sense to have a class (or classes)
-        // responsible for handling low level situations like this to do things like:
-        // - determine encoding
-        // - determine space vs tabs
-        // - determine indentation size
-
         if (first_read) {
             first_read = false;
 
-            bomType = detectBom(chunk);
+            const BomType detectedBom = detectBom(chunk);
 
-            if (bomType != BomType::None) {
+            if (detectedBom != BomType::None) {
                 qDebug("BOM found");
             }
 
-            if (bomType == BomType::Utf8) {
-                chunk.remove(0, bomLength(bomType));
+            if (!forcedEncoding.isEmpty() && TextEncoding::isAvailable(forcedEncoding)) {
+                // The user (or session) explicitly asked for an encoding. Only treat a BOM as such if it matches.
+                encodingName = TextEncoding::isUtf8(forcedEncoding) ? TextEncoding::UTF8 : TextEncoding::canonicalName(forcedEncoding);
+                bomType = (detectedBom != BomType::None && bomForEncoding(encodingName) == detectedBom) ? detectedBom : BomType::None;
+            }
+            else {
+                bomType = detectedBom;
+
+                if (bomType == BomType::Utf8) {
+                    encodingName = TextEncoding::UTF8;
+                }
+                else if (bomType == BomType::Utf16LE) {
+                    encodingName = TextEncoding::UTF16LE;
+                }
+                else if (bomType == BomType::Utf16BE) {
+                    encodingName = TextEncoding::UTF16BE;
+                }
+                else if (TextEncoding::isValidUtf8(chunk, !file.atEnd())) {
+                    encodingName = TextEncoding::UTF8;
+                }
+                else {
+                    const QByteArray guess = TextEncoding::guessEncoding(chunk);
+                    encodingName = guess.isEmpty() ? TextEncoding::ansiCodecName() : guess;
+                    qInfo("Detected encoding: %s", encodingName.constData());
+                }
             }
 
-            if (bomType == BomType::Utf16BE || bomType == BomType::Utf16LE) {
-                // Um...ignore this for now?
+            chunk.remove(0, bomLength(bomType));
+
+            if (!TextEncoding::isUtf8(encodingName)) {
+                QTextCodec *codec = TextEncoding::codecForName(encodingName);
+
+                if (codec) {
+                    encodingName = codec->name();
+                    decoder.reset(codec->makeDecoder(QTextCodec::IgnoreHeader));
+                }
+                else {
+                    qWarning("Encoding %s is not available, falling back to UTF-8", encodingName.constData());
+                    encodingName = TextEncoding::UTF8;
+                }
             }
         }
 
-        appendText(chunk.size(), chunk.constData());
+        if (decoder) {
+            const QByteArray utf8 = decoder->toUnicode(chunk).toUtf8();
+            appendText(utf8.size(), utf8.constData());
+        }
+        else {
+            appendText(chunk.size(), chunk.constData());
+        }
     } while (!file.atEnd() && status() == SC_STATUS_OK);
 
     file.close();
@@ -693,7 +770,101 @@ bool ScintillaNext::readFromDisk(QFile &file)
         setReadOnly(true);
     }
 
+    encodingModified = false;
+    emit encodingChanged();
+
     return true;
+}
+
+QByteArray ScintillaNext::encodedText()
+{
+    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+
+    if (TextEncoding::isUtf8(encodingName)) {
+        return data;
+    }
+
+    QTextCodec *codec = TextEncoding::codecForName(encodingName);
+    if (codec == Q_NULLPTR) {
+        return data;
+    }
+
+    // The BOM is handled separately
+    std::unique_ptr<QTextEncoder> encoder(codec->makeEncoder(QTextCodec::IgnoreHeader));
+    return encoder->fromUnicode(QString::fromUtf8(data));
+}
+
+bool ScintillaNext::isUtf8() const
+{
+    return TextEncoding::isUtf8(encodingName);
+}
+
+QString ScintillaNext::encodingDisplayName() const
+{
+    if (TextEncoding::isUtf8(encodingName)) {
+        return bomType == BomType::Utf8 ? QStringLiteral("UTF-8-BOM") : QStringLiteral("UTF-8");
+    }
+
+    const QByteArray canonical = TextEncoding::canonicalName(encodingName);
+
+    if (canonical == TextEncoding::canonicalName(TextEncoding::UTF16LE)) {
+        return bomType == BomType::Utf16LE ? QStringLiteral("UTF-16 LE BOM") : QStringLiteral("UTF-16 LE");
+    }
+
+    if (canonical == TextEncoding::canonicalName(TextEncoding::UTF16BE)) {
+        return bomType == BomType::Utf16BE ? QStringLiteral("UTF-16 BE BOM") : QStringLiteral("UTF-16 BE");
+    }
+
+    return TextEncoding::displayName(encodingName);
+}
+
+void ScintillaNext::setEncoding(const QByteArray &encoding, BomType bom, bool markModified)
+{
+    const QByteArray newEncoding = TextEncoding::isUtf8(encoding) ? TextEncoding::UTF8 : TextEncoding::canonicalName(encoding);
+
+    if (newEncoding == encodingName && bom == bomType) {
+        return;
+    }
+
+    encodingName = newEncoding;
+    bomType = bom;
+
+    if (markModified && !encodingModified) {
+        encodingModified = true;
+        emit savePointChanged(true);
+    }
+
+    emit encodingChanged();
+}
+
+bool ScintillaNext::reloadWithEncoding(const QByteArray &encoding)
+{
+    if (!isFile() || !QFile::exists(fileInfo.canonicalFilePath())) {
+        // Nothing to re-read, the best that can be done is to just change how it will be saved
+        const BomType bom = bomForEncoding(encoding);
+        setEncoding(encoding, bom == BomType::Utf8 ? BomType::None : bom, false);
+        return false;
+    }
+
+    encodingName = TextEncoding::isUtf8(encoding) ? TextEncoding::UTF8 : TextEncoding::canonicalName(encoding);
+    reload();
+
+    return true;
+}
+
+bool ScintillaNext::canEncodeLosslessly()
+{
+    if (TextEncoding::isUtf8(encodingName)) {
+        return true;
+    }
+
+    QTextCodec *codec = TextEncoding::codecForName(encodingName);
+    if (codec == Q_NULLPTR) {
+        return true;
+    }
+
+    const QByteArray data = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    return codec->canEncode(QString::fromUtf8(data));
 }
 
 QDateTime ScintillaNext::fileTimestamp()
